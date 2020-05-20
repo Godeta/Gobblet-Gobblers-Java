@@ -1,0 +1,15 @@
+"Bonsoir,
+
+étant donné de la continuation de l'enseignement non-présentiel, il serait
+difficile d'assurer des soutenances pour le projet M2103.
+
+Je vous demande ainsi de créer une petite vidéo de démonstration (environ 5
+minutes) de votre projet dans laquelle vous démontrez les différentes
+fonctionnalités que vous avez implémentées.
+
+Il y a des propositions d'outil pour enregistrer son écran à
+https://www.ubuntupit.com/15-best-linux-screen-recorder-and-how-to-install-those-on-ubuntu/.
+Mme Flipo a ajouté DaVinci Resolve et Wondershare Filmora comme options.
+
+Utilisez le service FileX (https://ent.normandie-univ.fr/filex/upload) pour
+mettre le fichier disponible et informez-moi pour que je puisse le collecter. "
