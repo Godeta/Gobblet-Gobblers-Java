@@ -1,10 +1,10 @@
 package gobblets.data;
 //les différents états possibles de la partie
 public enum Etat {
-    JOUEUR1GAGNE,
-    JOUEUR2GAGNE,
-    JEUENCOURS,
+	JEUENCOURS,
     JEUQUITTE,
+	JOUEUR1GAGNE,
+    JOUEUR2GAGNE,
     MATCHNUL;
 
     Etat() {}

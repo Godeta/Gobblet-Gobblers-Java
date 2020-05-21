@@ -6,25 +6,30 @@ import java.util.Random;
 import java.util.Scanner;
 
 import gobblets.ihm.Avertissement;
+import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
+import gobblets.ihm.langues.Anglais;
+import gobblets.ihm.langues.Espagnol;
+import gobblets.ihm.langues.Francais;
 import gobblets.data.*;
 
 public class SaisieConsole extends IHM {
     private final static Scanner sc = new Scanner(System.in);
 
-    public SaisieConsole() {}
+    public SaisieConsole() { choixLangue();}
 
-    @Override
     public Joueur saisirJoueur(int n) throws Exception {
-        System.out.println("Saisie Joueur" + n);
+        System.out.println(getLanguage().avertissement(Avertissement.SAISIEJOUEUR)+n);
         Joueur j = null;
         System.out.println(getLanguage().avertissement(Avertissement.CHOIXTYPEJOUEUR));
-        System.out.println("1 : JoueurHumain | 2 : JoueurIA | * : annuler");
+        System.out.println("1 : "+getLanguage().avertissement(Avertissement.JOUEURHUMAIN)+
+        		" | 2 : "+getLanguage().avertissement(Avertissement.JOUEURIA)+" | * : "+
+        		getLanguage().avertissement(Avertissement.ANNULER));
         int choice = 0;
         try {
             choice = Integer.parseInt(sc.nextLine());
         } catch (Exception e) {
-            // Cancel Saisie joueur
+            // Annuler Saisie joueur
             throw new Exception("annulation saisie.");
         }
         try {
@@ -82,14 +87,6 @@ public class SaisieConsole extends IHM {
                 couleur = Couleur.BLANC;
                 break;
 
-            case "6":
-                couleur = Couleur.CYAN;
-                break;
-
-            case "7":
-                couleur = Couleur.VIOLET;
-                break;
-
             default:
                 throw new Exception("Pas de couleur choisie.");
         }
@@ -129,22 +126,13 @@ public class SaisieConsole extends IHM {
             case "5":
                 couleur = Couleur.BLANC;
                 break;
-
-            case "6":
-                couleur = Couleur.CYAN;
-                break;
-
-            case "7":
-                couleur = Couleur.VIOLET;
-                break;
-
             default:
                 throw new Exception("Pas de couleur choisie.");
         }
         return new JoueurHumain(nom, couleur);
     }
 
-    @Override
+    
     public Taille saisirTaille() throws Exception {
         System.out.println(getLanguage().avertissement(Avertissement.CHOIXTAILLE));
         String s = "";
@@ -162,7 +150,6 @@ public class SaisieConsole extends IHM {
         }
     }
 
-    @Override
     public int[] saisirCoordonnees() {
         int[] coord = new int[2];
         System.out.println(getLanguage().avertissement(Avertissement.SAISIECOORDONNEES) + "(0->2) : ");
@@ -174,7 +161,7 @@ public class SaisieConsole extends IHM {
                 try {
                     in = Integer.parseInt(s);
                 } catch (Exception e) {
-                    System.out.println("Erreur : " + e + " Veuillez entrer un valuer correcte.");
+                    System.out.println("Erreur : " + e + " Veuillez entrer une valeur correcte.");
                 }
             } while (in == null);
             coord[i] = in;
@@ -206,7 +193,6 @@ public class SaisieConsole extends IHM {
         return houseDis;
     }
 
-    @Override
     public void display(gobblets.data.Plateau p, Joueur j) {
         try {
             System.out.println(getLanguage().avertissement(Avertissement.NOMJOUEUR) + " : " + generateColoredBGString(" "+j.getNom()+" ", j.getCouleur()));
@@ -218,7 +204,6 @@ public class SaisieConsole extends IHM {
         }
     }
 
-    @Override
     public ActionType saisirAction(Joueur j) throws Exception {
         System.out.println(getLanguage().avertissement(Avertissement.CHOIXACTION));
         String s = "";
@@ -235,4 +220,23 @@ public class SaisieConsole extends IHM {
             default: throw new Exception("annulation action");
         }
     }
+    
+    //effectué au lancement du jeu
+	public void choixLangue() {
+        System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol");
+        Dictionnaire fr = new Francais();
+        Dictionnaire an = new Anglais();
+        Dictionnaire es = new Espagnol();
+        String in;
+        do {
+        in =sc.nextLine();
+        
+        switch (in) {
+        case "1": this.setLanguage(fr); break;
+        case "2":  this.setLanguage(an); break;
+        case "3":  this.setLanguage(es); break;
+        default: in ="0"; System.out.println("Mauvais choix"+in);
+        }
+    } while(in=="0");
+	}
 }

@@ -9,7 +9,7 @@ public class Case {
 
     public String getRepresentationTextuelle() {
         String s = "";
-        if (contenu.plusGrandePiece() == null) s = "   ";
+        if (contenu.plusGrandePiece() == null) s = " | ";
         else {
             Piece p = new Piece(contenu.plusGrandePiece());
             s += p.getRepresentationTextuelle();

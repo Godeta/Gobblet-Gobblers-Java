@@ -23,7 +23,7 @@ public class JoueurIA extends Joueur {
         this.adversaire = adversaire;
     }
 
-    @Override
+    //Implémentation de la méthode de la classe Joueur, utilise une logique interne afin de sélectionner une action
     public Action choisirAction(Plateau p) {
         // min max
         return minMAxAlgo(p);

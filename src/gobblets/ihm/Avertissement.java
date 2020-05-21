@@ -13,6 +13,10 @@ public enum Avertissement {
     SAISIECOORDONNEE1,
     SAISIECOORDONNEE2,
     MAISON,
+    SAISIEJOUEUR,
+    JOUEURHUMAIN,
+    JOUEURIA,
+    ANNULER,
     CHOIXTYPEJOUEUR;
 
     Avertissement() {}

@@ -27,8 +27,6 @@ public class Francais implements Dictionnaire {
 	        couleurs.put(Couleur.JAUNE, "Jaune");
 	        couleurs.put(Couleur.BLEU, "Bleu");
 	        couleurs.put(Couleur.BLANC, "Blanc");
-	        couleurs.put(Couleur.CYAN, "Cyan");
-	        couleurs.put(Couleur.VIOLET, "Violet");
 	        /* tailles */
 	        tailles = new HashMap<Taille, String>();
 	        tailles.put(Taille.GRANDE, "Grande");
@@ -68,34 +66,38 @@ public class Francais implements Dictionnaire {
 	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Seconde coordonnée");
 	        avertissements.put(Avertissement.MAISON, "Maison");
 	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "Quel type de joueur ?");
+	        avertissements.put(Avertissement.SAISIEJOUEUR, "Saisie du joueur ");
+	        avertissements.put(Avertissement.JOUEURHUMAIN, "Joueur Humain ");
+	        avertissements.put(Avertissement.JOUEURIA, "Joueur IA ");
+	        avertissements.put(Avertissement.ANNULER, "Annuler ");
 	    }
 
-	    @Override
+	    
 	    public String couleur(Couleur c) {
 	        return couleurs.get(c);
 	    }
 
-	    @Override
+	    
 	    public String taille(Taille t) {
 	        return tailles.get(t);
 	    }
 
-	    @Override
+	    
 	    public String etat(Etat e) {
 	        return etats.get(e);
 	    }
 
-	    @Override
+	    
 	    public String action(ActionType a) {
 	        return actions.get(a);
 	    }
 
-	    @Override
+	    
 	    public String erreur(Erreur e) {
 	        return erreurs.get(e);
 	    }
 
-	    @Override
+	    
 	    public String avertissement(Avertissement a) {
 	        return avertissements.get(a);
 	    }

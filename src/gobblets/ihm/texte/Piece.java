@@ -12,7 +12,7 @@ public class Piece {
         try {
             return "x"; //test
         } catch (Exception e) {
-            return "   ";
+            return " | ";
         }
     }
 }

@@ -3,6 +3,7 @@ package gobblets.ihm;
 import gobblets.ihm.langues.*;
 import gobblets.data.*;
 
+//Classe qui modélise l'interface homme-machine
 public abstract class IHM {
     private Dictionnaire language;
 
@@ -26,10 +27,6 @@ public abstract class IHM {
 
     public IHM getIHM() {
         return this;
-    }
-
-    public void setIHM(IHM i) {
-        // todo
     }
 
     public String couleur(Couleur c) {

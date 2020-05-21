@@ -7,13 +7,13 @@ import gobblets.ihm.texte.SaisieConsole;
 import gobblets.interaction.*;
 import gobblets.logic.PiecePasdisponibleException;
 
-//Implémentation de la méthode abstraite de la classe Joueur, utilise les méthodes de une instance de la classe IHM
+//Classe définissant un joueur que l'on peut contrôler
 public class JoueurHumain extends Joueur {
     public JoueurHumain(String nom, Couleur couleur) {
         super(nom, couleur);
     }
 
-    @Override
+    //Implémentation de la méthode abstraite de la classe Joueur, utilise les méthodes de une instance de la classe IHM
     public Action choisirAction(Plateau p) throws Exception {
         IHM i = new SaisieConsole();
         ActionType choix = i.saisirAction(this);

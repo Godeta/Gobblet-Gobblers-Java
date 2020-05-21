@@ -5,9 +5,7 @@ public enum Couleur {
     VERT(0, 255, 0),
     JAUNE(255, 255, 0),
     BLEU(0, 0, 255),
-    BLANC(255, 255, 255),
-    CYAN(0, 255, 255),
-    VIOLET(255, 0, 255);
+    BLANC(255, 255, 255);
 
     private int r, g, b;
     Couleur(int r, int g, int b) {

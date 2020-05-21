@@ -23,80 +23,82 @@ public class Espagnol implements Dictionnaire {
 	    public Espagnol() {
 	        /* couleurs */
 	        couleurs = new HashMap<Couleur, String>();
-	        couleurs.put(Couleur.ROUGE, "Rouge");
-	        couleurs.put(Couleur.VERT, "Vert");
-	        couleurs.put(Couleur.JAUNE, "Jaune");
-	        couleurs.put(Couleur.BLEU, "Bleu");
-	        couleurs.put(Couleur.BLANC, "Blanc");
-	        couleurs.put(Couleur.CYAN, "Cyan");
-	        couleurs.put(Couleur.VIOLET, "Violet");
+	        couleurs.put(Couleur.ROUGE, "Rojo");
+	        couleurs.put(Couleur.VERT, "Verde");
+	        couleurs.put(Couleur.JAUNE, "Amarillo");
+	        couleurs.put(Couleur.BLEU, "Azul");
+	        couleurs.put(Couleur.BLANC, "Blanco");
 	        /* tailles */
 	        tailles = new HashMap<Taille, String>();
 	        tailles.put(Taille.GRANDE, "Grande");
-	        tailles.put(Taille.MOYENNE, "Moyenne");
-	        tailles.put(Taille.PETITE, "Petite");
+	        tailles.put(Taille.MOYENNE, "Media");
+	        tailles.put(Taille.PETITE, "Pequena");
 	        /* etats */
 	        etats = new HashMap<Etat, String>();
-	        etats.put(Etat.JEUENCOURS, "Jeu en cours");
-	        etats.put(Etat.JEUQUITTE, "Jeu quitté");
-	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 à gagné !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 à gagné !");
-	        etats.put(Etat.MATCHNUL, "Match nul");
+	        etats.put(Etat.JEUENCOURS, "Juego en progresso");
+	        etats.put(Etat.JEUQUITTE, "Salir del juego");
+	        etats.put(Etat.JOUEUR1GAGNE, "! Jugador 1 ganado !");
+	        etats.put(Etat.JOUEUR2GAGNE, "! Jugador 2 ganado !");
+	        etats.put(Etat.MATCHNUL, "Empate");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
-	        actions.put(ActionType.DEPLACER, "Deplacer");
-	        actions.put(ActionType.PLACER, "Placer");
-	        actions.put(ActionType.QUITTER, "Quitter");
+	        actions.put(ActionType.DEPLACER, "Moverse");
+	        actions.put(ActionType.PLACER, "Poner");
+	        actions.put(ActionType.QUITTER, "Salir");
 	        /* erreurs */
 	        erreurs = new HashMap<Erreur, String>();
-	        erreurs.put(Erreur.ARGUMENTINCORECT, "Argument incorrect");
-	        erreurs.put(Erreur.CASEBLOQUE, "Case Bloquée");
-	        erreurs.put(Erreur.DIAGONALEINCORECTE, "Diagonale incorrecte");
-	        erreurs.put(Erreur.ORIGINVIDE, "Origine vide");
-	        erreurs.put(Erreur.PASDEPIECEDISPONIBLE, "Pas de pièce disponible");
-	        erreurs.put(Erreur.PASTAPIECE, "Pas ta pièce");
+	        erreurs.put(Erreur.ARGUMENTINCORECT, "Argumento incorrecto");
+	        erreurs.put(Erreur.CASEBLOQUE, "Caja bloqueda");
+	        erreurs.put(Erreur.DIAGONALEINCORECTE, "Diagonal incorrecto");
+	        erreurs.put(Erreur.ORIGINVIDE, "Origen vacio");
+	        erreurs.put(Erreur.PASDEPIECEDISPONIBLE, "Ninguna pieza disponible");
+	        erreurs.put(Erreur.PASTAPIECE, "! No es tu pieza !");
 	        /* avertissements */
 	        avertissements = new HashMap<Avertissement, String>();
-	        avertissements.put(Avertissement.CHOIXACTION, "Choisir votre action");
-	        avertissements.put(Avertissement.CHOIXDESTINATION, "Destination ?");
-	        avertissements.put(Avertissement.CHOIXORIGIN, "Origine ?");
-	        avertissements.put(Avertissement.CHOIXTAILLE, "Taille ?");
-	        avertissements.put(Avertissement.COULEURJOUEUR, "Couleur joueur");
-	        avertissements.put(Avertissement.NOMJOUEUR, "Nom joueur");
-	        avertissements.put(Avertissement.TONTOUR, "Tour de");
-	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Saisie coordonnées");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "Première coordonnée");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Seconde coordonnée");
-	        avertissements.put(Avertissement.MAISON, "Maison");
-	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "Quel type de joueur ?");
+	        avertissements.put(Avertissement.CHOIXACTION, "Elige tu accion");
+	        avertissements.put(Avertissement.CHOIXDESTINATION, "? Cual es la destinacion ?");
+	        avertissements.put(Avertissement.CHOIXORIGIN, "? Origen ?");
+	        avertissements.put(Avertissement.CHOIXTAILLE, "? Tamano ?");
+	        avertissements.put(Avertissement.COULEURJOUEUR, "Color del jugador");
+	        avertissements.put(Avertissement.NOMJOUEUR, "Apellido del jugador");
+	        avertissements.put(Avertissement.TONTOUR, "Turno de");
+	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Ingresar coordenadas");
+	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "Primera coordenada");
+	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Segunda coordenada");
+	        avertissements.put(Avertissement.MAISON, "Casa");
+	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "? Que tipo de jugador ?");
+	        avertissements.put(Avertissement.SAISIEJOUEUR, "Entrada del jugador ");
+	        avertissements.put(Avertissement.JOUEURHUMAIN, "Jugador Humano ");
+	        avertissements.put(Avertissement.JOUEURIA, "Jugador IA ");
+	        avertissements.put(Avertissement.ANNULER, "Cancelar ");
 	    }
 
-	    @Override
+	    
 	    public String couleur(Couleur c) {
 	        return couleurs.get(c);
 	    }
 
-	    @Override
+	    
 	    public String taille(Taille t) {
 	        return tailles.get(t);
 	    }
 
-	    @Override
+	    
 	    public String etat(Etat e) {
 	        return etats.get(e);
 	    }
 
-	    @Override
+	    
 	    public String action(ActionType a) {
 	        return actions.get(a);
 	    }
 
-	    @Override
+	    
 	    public String erreur(Erreur e) {
 	        return erreurs.get(e);
 	    }
 
-	    @Override
+	    
 	    public String avertissement(Avertissement a) {
 	        return avertissements.get(a);
 	    }
