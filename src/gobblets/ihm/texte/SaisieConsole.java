@@ -1,22 +1,23 @@
 package gobblets.ihm.texte;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
+import gobblets.data.ActionType;
+import gobblets.data.Couleur;
+import gobblets.data.Joueur;
+import gobblets.data.JoueurHumain;
+import gobblets.data.JoueurIA;
+import gobblets.data.Taille;
 import gobblets.ihm.Avertissement;
 import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
 import gobblets.ihm.langues.Anglais;
 import gobblets.ihm.langues.Espagnol;
 import gobblets.ihm.langues.Francais;
-import gobblets.data.*;
 
 public class SaisieConsole extends IHM {
     private final static Scanner sc = new Scanner(System.in);
-
-    public SaisieConsole() { choixLangue();}
+    public SaisieConsole() { }
 
     public Joueur saisirJoueur(int n) throws Exception {
         System.out.println(getLanguage().avertissement(Avertissement.SAISIEJOUEUR)+n);
@@ -53,9 +54,7 @@ public class SaisieConsole extends IHM {
     }
 
     private JoueurIA saisieJoueurIA() throws Exception {
-        String nom ;
-        List<String> listOfNames = Arrays.asList("ASTROBOY", "QRIO", "DANTE", "SPEEDY", "GENGHIS", "ALBERT HUBO", "R2-D2", "VAUCANSON", "THE IRON GIANT", "R.O.B.", "ROOMBA");
-        nom = listOfNames.get(new Random().nextInt(listOfNames.size()));
+        String nom = "SUPER ORDINATEUR";
         System.out.println(getLanguage().avertissement(Avertissement.NOMJOUEUR) + " : " + nom);
         Couleur couleur;
         System.out.println(getLanguage().avertissement(Avertissement.COULEURJOUEUR) + " : ");
@@ -220,23 +219,4 @@ public class SaisieConsole extends IHM {
             default: throw new Exception("annulation action");
         }
     }
-    
-    //effectué au lancement du jeu
-	public void choixLangue() {
-        System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol");
-        Dictionnaire fr = new Francais();
-        Dictionnaire an = new Anglais();
-        Dictionnaire es = new Espagnol();
-        String in;
-        do {
-        in =sc.nextLine();
-        
-        switch (in) {
-        case "1": this.setLanguage(fr); break;
-        case "2":  this.setLanguage(an); break;
-        case "3":  this.setLanguage(es); break;
-        default: in ="0"; System.out.println("Mauvais choix"+in);
-        }
-    } while(in=="0");
-	}
 }

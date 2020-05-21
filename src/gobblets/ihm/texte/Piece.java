@@ -1,5 +1,7 @@
 package gobblets.ihm.texte;
 
+import gobblets.ihm.texte.SaisieConsole;
+
 //affiche une pièce dans la console
 public class Piece {
     private gobblets.data.Piece contenu;
@@ -10,9 +12,9 @@ public class Piece {
 
     public String getRepresentationTextuelle() {
         try {
-            return "x"; //test
+        	return SaisieConsole.generateColoredFGString(contenu.getTaille().getSymbole() + " ", contenu.getCouleur())+"|  ";
         } catch (Exception e) {
-            return " | ";
+            return "  |  ";
         }
     }
 }

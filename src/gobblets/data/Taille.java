@@ -1,9 +1,9 @@
 package gobblets.data;
 //enumeration, on a 3 tailles différentes
 public enum Taille {
-    PETITE('P'),
-    MOYENNE('M'),
-    GRANDE('G');
+    PETITE('o'),
+    MOYENNE('O'),
+    GRANDE('0');
 //chaque pièce à un symbole
     private char symbole;
     Taille(char c) {

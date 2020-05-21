@@ -4,7 +4,10 @@ import gobblets.ihm.Avertissement;
 import gobblets.ihm.Erreur;
 import gobblets.ihm.IHM;
 import gobblets.ihm.texte.SaisieConsole;
-import gobblets.interaction.*;
+import gobblets.interaction.Action;
+import gobblets.interaction.Deplacement;
+import gobblets.interaction.Placement;
+import gobblets.interaction.Termination;
 import gobblets.logic.PiecePasdisponibleException;
 
 //Classe définissant un joueur que l'on peut contrôler

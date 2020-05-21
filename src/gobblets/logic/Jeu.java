@@ -3,11 +3,22 @@ package gobblets.logic;
 //Constructeur qui exploite des méthodes de saisie afin d'initialiser le jeu
 
 import java.util.Random;
+import java.util.Scanner;
 
+import gobblets.data.Couleur;
+import gobblets.data.Etat;
+import gobblets.data.Joueur;
+import gobblets.data.JoueurIA;
+import gobblets.data.Piece;
+import gobblets.data.Plateau;
+import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
+import gobblets.ihm.langues.Anglais;
+import gobblets.ihm.langues.Espagnol;
+import gobblets.ihm.langues.Francais;
 import gobblets.ihm.texte.SaisieConsole;
-import gobblets.data.*;
-import gobblets.interaction.*;
+import gobblets.interaction.Action;
+import gobblets.interaction.Termination;
 
 public class Jeu {
     private Plateau plateau;
@@ -19,6 +30,8 @@ public class Jeu {
         /* temp */
         IHM saisie = new SaisieConsole();
         etat = Etat.JEUENCOURS;
+        //on effectue le choix de la langue une seule fois au début du jeu
+        choixLangue(saisie);
         /* init j1 */
         do {
             try {
@@ -154,5 +167,24 @@ public class Jeu {
         this.etat = etat;
     }
 
+  //effectué au lancement du jeu
+  	public void choixLangue(IHM sais) {
+  		Scanner sc = new Scanner(System.in);
+          System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol");
+          Dictionnaire fr = new Francais();
+          Dictionnaire an = new Anglais();
+          Dictionnaire es = new Espagnol();
+          String in;
+          do {
+          in =sc.nextLine();
+          
+          switch (in) {
+          case "1": sais.setLanguage(fr); break;
+          case "2":  sais.setLanguage(an); break;
+          case "3":  sais.setLanguage(es); break;
+          default: in ="0"; System.out.println("Mauvais choix"+in);
+          }
+      } while(in=="0");
+  	}
 
 }

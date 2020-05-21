@@ -35,9 +35,9 @@ public class Francais implements Dictionnaire {
 	        /* etats */
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Jeu en cours");
-	        etats.put(Etat.JEUQUITTE, "Jeu quitt√©");
-	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 √† gagn√© !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 √† gagn√© !");
+	        etats.put(Etat.JEUQUITTE, "Jeu quitter");
+	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 ‡ gagnÈ !");
+	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 ‡ gagnÈ !");
 	        etats.put(Etat.MATCHNUL, "Match nul");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -47,23 +47,23 @@ public class Francais implements Dictionnaire {
 	        /* erreurs */
 	        erreurs = new HashMap<Erreur, String>();
 	        erreurs.put(Erreur.ARGUMENTINCORECT, "Argument incorrect");
-	        erreurs.put(Erreur.CASEBLOQUE, "Case Bloqu√©e");
+	        erreurs.put(Erreur.CASEBLOQUE, "Case BloquÈe");
 	        erreurs.put(Erreur.DIAGONALEINCORECTE, "Diagonale incorrecte");
 	        erreurs.put(Erreur.ORIGINVIDE, "Origine vide");
-	        erreurs.put(Erreur.PASDEPIECEDISPONIBLE, "Pas de pi√®ce disponible");
-	        erreurs.put(Erreur.PASTAPIECE, "Pas ta pi√®ce");
+	        erreurs.put(Erreur.PASDEPIECEDISPONIBLE, "Pas de piËce disponible");
+	        erreurs.put(Erreur.PASTAPIECE, "Ceci n'est pas ta piËce !");
 	        /* avertissements */
 	        avertissements = new HashMap<Avertissement, String>();
-	        avertissements.put(Avertissement.CHOIXACTION, "Choisir votre action");
-	        avertissements.put(Avertissement.CHOIXDESTINATION, "Destination ?");
+	        avertissements.put(Avertissement.CHOIXACTION, "Choisir action");
+	        avertissements.put(Avertissement.CHOIXDESTINATION, "Quelle destination ?");
 	        avertissements.put(Avertissement.CHOIXORIGIN, "Origine ?");
 	        avertissements.put(Avertissement.CHOIXTAILLE, "Taille ?");
 	        avertissements.put(Avertissement.COULEURJOUEUR, "Couleur joueur");
 	        avertissements.put(Avertissement.NOMJOUEUR, "Nom joueur");
 	        avertissements.put(Avertissement.TONTOUR, "Tour de");
-	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Saisie coordonn√©es");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "Premi√®re coordonn√©e");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Seconde coordonn√©e");
+	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Saisie coordonnÈes");
+	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "PremiËre coordonnÈe");
+	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Seconde coordonnÈe");
 	        avertissements.put(Avertissement.MAISON, "Maison");
 	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "Quel type de joueur ?");
 	        avertissements.put(Avertissement.SAISIEJOUEUR, "Saisie du joueur ");
