@@ -2,3 +2,4 @@ bin/
 javadoc/
 .project
 .classpath
+lib/Java.jar
