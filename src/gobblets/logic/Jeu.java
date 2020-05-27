@@ -11,8 +11,10 @@ import gobblets.data.Joueur;
 import gobblets.data.JoueurIA;
 import gobblets.data.Piece;
 import gobblets.data.Plateau;
+import gobblets.ihm.Avertissement;
 import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
+import gobblets.ihm.Menu;
 import gobblets.ihm.langues.Anglais;
 import gobblets.ihm.langues.Espagnol;
 import gobblets.ihm.langues.Francais;
@@ -30,45 +32,7 @@ public class Jeu {
         /* temp */
         IHM saisie = new SaisieConsole();
         etat = Etat.JEUENCOURS;
-        //on effectue le choix de la langue une seule fois au début du jeu
-        choixLangue(saisie);
-        /* init j1 */
-        do {
-            try {
-                j1 = saisie.saisirJoueur(1);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        } while (j1 == null || j1.getNom() == "" || j1.getCouleur() == null);
-        j1.setPieces(plateau.getMaisonJ1());
-        for (Object o : j1.getPieces().toArray()) {
-            ((Piece) o).setCouleur(j1.getCouleur());
-        }
-        /* init j2 */
-        do {
-            try {
-                j2 = saisie.saisirJoueur(2);
-            } catch (Exception e) {
-                System.out.println(e);
-                j2 = null;
-            }
-        } while ((j2 == null || j2.getNom() == "" || j2.getCouleur() == null) || j2.getNom().equals(j1.getNom()) && j2.getCouleur() == j1.getCouleur());
-        j2.setPieces(plateau.getMaisonJ2());
-        // IA Setup
-        if (j1 instanceof JoueurIA) {
-            ((JoueurIA)j1).setAdversaire(j2);
-        }
-        if (j2 instanceof JoueurIA) {
-            ((JoueurIA)j2).setAdversaire(j1);
-        }
-        // pieces setup
-        for (Object o : j2.getPieces().toArray()) {
-            ((Piece) o).setCouleur(j2.getCouleur());
-        }
-        /* set starting player */
-        Random r = new Random();
-        joueurActif = r.nextBoolean() ? j1 : j2;
-        /* temp */
+        menu_display(saisie);
     }
 
     public void changeJoueur() {
@@ -167,7 +131,11 @@ public class Jeu {
         this.etat = etat;
     }
 
-  //effectué au lancement du jeu
+
+/**
+ * Permet de choisir la langue du jeu
+ * @param sais L'IHM sur laquelle on effectue la saisie
+ */
   	public void choixLangue(IHM sais) {
   		Scanner sc = new Scanner(System.in);
           System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol");
@@ -185,6 +153,78 @@ public class Jeu {
           default: in ="0"; System.out.println("Mauvais choix"+in);
           }
       } while(in=="0");
+  	}
+  	
+  	/**
+  	 * Affichage du menu
+  	 * @param saisie
+  	 */
+  	public void menu_display(IHM saisie) {
+  	  	//on effectue le choix de la langue une seule fois au début du jeu
+        choixLangue(saisie);
+  		Scanner sc2 = new Scanner(System.in);
+  		System.out.println(saisie.getLanguage().menu(Menu.MENU_NOUVEAU) + "(1)");
+  		System.out.println(saisie.getLanguage().menu(Menu.MENU_FICHIER)+ "(2)");
+  		System.out.println(saisie.getLanguage().menu(Menu.MENU_AIDE)+ "(3)");
+  		System.out.println(saisie.getLanguage().menu(Menu.MENU_APROPOS)+ "(4)");
+  		System.out.println(saisie.getLanguage().menu(Menu.MENU_LANGUE)+ "(5)");
+  		System.out.println(saisie.getLanguage().menu(Menu.MENU_QUITTER)+ "(6)");
+  		
+  		String in;
+        do {
+        in =sc2.nextLine();
+        
+        switch (in) {
+        //nouvelle partie
+        case "1": debut(saisie); break;
+        //fichier
+        case "2":  saisie.ouvrir(); break;
+        case "3":  sais.setLanguage(es); break;
+        default: in ="0"; System.out.println("Mauvais choix"+in);
+        }
+    } while(in=="0");
+  		
+
+       
+  	}
+  	
+  	public void debut(IHM saisie) {
+  		 /* init j1 */
+        do {
+            try {
+                j1 = saisie.saisirJoueur(1);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } while (j1 == null || j1.getNom() == "" || j1.getCouleur() == null);
+        j1.setPieces(plateau.getMaisonJ1());
+        for (Object o : j1.getPieces().toArray()) {
+            ((Piece) o).setCouleur(j1.getCouleur());
+        }
+        /* init j2 */
+        do {
+            try {
+                j2 = saisie.saisirJoueur(2);
+            } catch (Exception e) {
+                System.out.println(e);
+                j2 = null;
+            }
+        } while ((j2 == null || j2.getNom() == "" || j2.getCouleur() == null) || j2.getNom().equals(j1.getNom()) && j2.getCouleur() == j1.getCouleur());
+        j2.setPieces(plateau.getMaisonJ2());
+        // IA Setup
+        if (j1 instanceof JoueurIA) {
+            ((JoueurIA)j1).setAdversaire(j2);
+        }
+        if (j2 instanceof JoueurIA) {
+            ((JoueurIA)j2).setAdversaire(j1);
+        }
+        // pieces setup
+        for (Object o : j2.getPieces().toArray()) {
+            ((Piece) o).setCouleur(j2.getCouleur());
+        }
+        /* set starting player */
+        Random r = new Random();
+        joueurActif = r.nextBoolean() ? j1 : j2;
   	}
 
 }

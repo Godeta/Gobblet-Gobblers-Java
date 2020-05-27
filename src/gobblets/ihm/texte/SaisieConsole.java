@@ -9,11 +9,7 @@ import gobblets.data.JoueurHumain;
 import gobblets.data.JoueurIA;
 import gobblets.data.Taille;
 import gobblets.ihm.Avertissement;
-import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
-import gobblets.ihm.langues.Anglais;
-import gobblets.ihm.langues.Espagnol;
-import gobblets.ihm.langues.Francais;
 
 public class SaisieConsole extends IHM {
     private final static Scanner sc = new Scanner(System.in);

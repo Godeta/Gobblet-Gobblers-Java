@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import gobblets.ihm.Avertissement;
 import gobblets.ihm.Erreur;
+import gobblets.ihm.Menu;
 import gobblets.data.ActionType;
 import gobblets.data.Couleur;
 import gobblets.data.Etat;
@@ -18,6 +19,7 @@ public class Francais implements Dictionnaire {
 	    private HashMap<ActionType, String> actions;
 	    private HashMap<Erreur,String> erreurs;
 	    private HashMap<Avertissement, String> avertissements;
+	    private HashMap<Menu, String> menu;
 
 	    public Francais() {
 	        /* couleurs */
@@ -70,6 +72,15 @@ public class Francais implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "Joueur Humain ");
 	        avertissements.put(Avertissement.JOUEURIA, "Joueur IA ");
 	        avertissements.put(Avertissement.ANNULER, "Annuler ");
+	        /* Menu */
+	        menu.put(Menu.MENU_AIDE, "Aide ");
+	        menu.put(Menu.MENU_APROPOS, "A propos ");
+	        menu.put(Menu.MENU_ENREGISTRER, "Enregistrer ");
+	        menu.put(Menu.MENU_FICHIER, "Fichier ");
+	        menu.put(Menu.MENU_LANGUE, "Langue ");
+	        menu.put(Menu.MENU_NOUVEAU, "Nouvelle partie ");
+	        menu.put(Menu.MENU_OUVRIR, "Ouvrir ");
+	        menu.put(Menu.MENU_QUITTER, "Quitter ");
 	    }
 
 	    
@@ -100,5 +111,9 @@ public class Francais implements Dictionnaire {
 	    
 	    public String avertissement(Avertissement a) {
 	        return avertissements.get(a);
+	    }
+	    
+	    public String menu(Menu m) {
+	        return menu.get(m);
 	    }
 }

@@ -9,6 +9,7 @@ import gobblets.data.Taille;
 import gobblets.ihm.Avertissement;
 import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.Erreur;
+import gobblets.ihm.Menu;
 
 //Classe qui implémente le dictionnaire espagnol
 public class Espagnol implements Dictionnaire {
@@ -19,6 +20,7 @@ public class Espagnol implements Dictionnaire {
 	    private HashMap<ActionType, String> actions;
 	    private HashMap<Erreur,String> erreurs;
 	    private HashMap<Avertissement, String> avertissements;
+	    private HashMap<Menu, String> menu;
 
 	    public Espagnol() {
 	        /* couleurs */
@@ -71,6 +73,15 @@ public class Espagnol implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "Jugador Humano ");
 	        avertissements.put(Avertissement.JOUEURIA, "Jugador IA ");
 	        avertissements.put(Avertissement.ANNULER, "Cancelar ");
+	        /* Menu */
+	        menu.put(Menu.MENU_AIDE, "Ayuda ");
+	        menu.put(Menu.MENU_APROPOS, "A proposito ");
+	        menu.put(Menu.MENU_ENREGISTRER, "Grabar ");
+	        menu.put(Menu.MENU_FICHIER, "Archivo ");
+	        menu.put(Menu.MENU_LANGUE, "Idioma ");
+	        menu.put(Menu.MENU_NOUVEAU, "Parte nueva ");
+	        menu.put(Menu.MENU_OUVRIR, "Abrir ");
+	        menu.put(Menu.MENU_QUITTER, "Salir ");
 	    }
 
 	    
@@ -103,4 +114,7 @@ public class Espagnol implements Dictionnaire {
 	        return avertissements.get(a);
 	    }
 	
+	    public String menu(Menu m) {
+	        return menu.get(m);
+	    }
 }

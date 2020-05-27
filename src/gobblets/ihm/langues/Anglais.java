@@ -9,6 +9,7 @@ import gobblets.data.Taille;
 import gobblets.ihm.Avertissement;
 import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.Erreur;
+import gobblets.ihm.Menu;
 
 //Classe qui implémente le dictionnaire anglais
 public class Anglais implements Dictionnaire {
@@ -19,6 +20,7 @@ public class Anglais implements Dictionnaire {
 	    private HashMap<ActionType, String> actions;
 	    private HashMap<Erreur,String> erreurs;
 	    private HashMap<Avertissement, String> avertissements;
+	    private HashMap<Menu, String> menu;
 
 	    public Anglais() {
 	        /* couleurs */
@@ -71,6 +73,15 @@ public class Anglais implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "Human Player ");
 	        avertissements.put(Avertissement.JOUEURIA, "AI Player ");
 	        avertissements.put(Avertissement.ANNULER, "Cancel ");
+	        /* Menu */
+	        menu.put(Menu.MENU_AIDE, "Help ");
+	        menu.put(Menu.MENU_APROPOS, "About me ");
+	        menu.put(Menu.MENU_ENREGISTRER, "Save ");
+	        menu.put(Menu.MENU_FICHIER, "File ");
+	        menu.put(Menu.MENU_LANGUE, "Language ");
+	        menu.put(Menu.MENU_NOUVEAU, "New game ");
+	        menu.put(Menu.MENU_OUVRIR, "Open ");
+	        menu.put(Menu.MENU_QUITTER, "Quit ");
 	    }
 
 	    
@@ -101,5 +112,9 @@ public class Anglais implements Dictionnaire {
 	    
 	    public String avertissement(Avertissement a) {
 	        return avertissements.get(a);
+	    }
+	    
+	    public String menu(Menu m) {
+	        return menu.get(m);
 	    }
 }
