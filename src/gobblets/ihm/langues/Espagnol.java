@@ -83,6 +83,7 @@ public class Espagnol implements Dictionnaire {
 	        menu.put(Menu.MENU_NOUVEAU, "Parte nueva ");
 	        menu.put(Menu.MENU_OUVRIR, "Abrir ");
 	        menu.put(Menu.MENU_QUITTER, "Salir ");
+	        menu.put(Menu.MENU_MENU, "Menù : ");
 	    }
 
 	    

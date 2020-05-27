@@ -14,12 +14,16 @@ import gobblets.data.Plateau;
 import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
 import gobblets.ihm.Menu;
+import gobblets.ihm.langues.Allemand;
 import gobblets.ihm.langues.Anglais;
 import gobblets.ihm.langues.Espagnol;
 import gobblets.ihm.langues.Francais;
 import gobblets.ihm.texte.SaisieConsole;
 import gobblets.interaction.Action;
 import gobblets.interaction.Termination;
+//pour les couleurs
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
 
 public class Jeu {
     private Plateau plateau;
@@ -35,7 +39,7 @@ public class Jeu {
   	  	//on effectue le choix de la langue une seule fois au début du jeu
         choixLangue(saisie);    
         do {
-        System.out.println("Menu :");
+        System.out.println(ansi().eraseScreen().fg(BLUE).a(saisie.getLanguage().menu(Menu.MENU_MENU)).fg(WHITE));
         } while (menu_display(saisie)==0);
     }
 
@@ -142,10 +146,11 @@ public class Jeu {
  */
   	public void choixLangue(IHM sais) {
   		Scanner sc = new Scanner(System.in);
-          System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol");
+          System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol, (4) allemand");
           Dictionnaire fr = new Francais();
           Dictionnaire an = new Anglais();
           Dictionnaire es = new Espagnol();
+          Dictionnaire alle = new Allemand ();
           String in;
           do {
           in =sc.nextLine();
@@ -154,6 +159,7 @@ public class Jeu {
           case "1": sais.setLanguage(fr); break;
           case "2":  sais.setLanguage(an); break;
           case "3":  sais.setLanguage(es); break;
+          case "4":  sais.setLanguage(alle); break;
           default: in ="0"; System.out.println("Mauvais choix"+in);
           }
       } while(in=="0");
@@ -238,15 +244,15 @@ public class Jeu {
   	}
 
   	public void aide(IHM saisie) {
-  		System.out.println("\n\n\n\n");
+  		System.out.println("\n\n");
   		System.out.println("ba voilà quoi");
-  		System.out.println("\n\n\n\n");
+  		System.out.println("\n\n");
   	}
   	
   	public void Apropos(IHM saisie) {
-  		System.out.println("\n\n\n\n");
+  		System.out.println("\n\n");
   		System.out.println("Ce projet a été fait en Mai 2020 dans le cadre de nos études à l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
-  		System.out.println("\n\n\n\n");
+  		System.out.println("\n\n");
   	}
   	
 }

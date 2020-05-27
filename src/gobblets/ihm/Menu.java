@@ -9,6 +9,7 @@ public enum Menu {
 	MENU_LANGUE, 
 	MENU_NOUVEAU, 
 	MENU_OUVRIR, 
+	MENU_MENU,
 	MENU_QUITTER;
 	
 	Menu() {}

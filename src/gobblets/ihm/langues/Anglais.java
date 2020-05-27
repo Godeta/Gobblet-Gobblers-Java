@@ -83,6 +83,7 @@ public class Anglais implements Dictionnaire {
 	        menu.put(Menu.MENU_NOUVEAU, "New game ");
 	        menu.put(Menu.MENU_OUVRIR, "Open ");
 	        menu.put(Menu.MENU_QUITTER, "Quit ");
+	        menu.put(Menu.MENU_MENU, "Menu : ");
 	    }
 
 	    

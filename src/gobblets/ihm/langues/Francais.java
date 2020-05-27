@@ -82,6 +82,7 @@ public class Francais implements Dictionnaire {
 	        menu.put(Menu.MENU_NOUVEAU, "Nouvelle partie ");
 	        menu.put(Menu.MENU_OUVRIR, "Ouvrir ");
 	        menu.put(Menu.MENU_QUITTER, "Quitter ");
+	        menu.put(Menu.MENU_MENU, "Menu : ");
 	    }
 
 	    
