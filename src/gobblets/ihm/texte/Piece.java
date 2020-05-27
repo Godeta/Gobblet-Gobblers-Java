@@ -12,7 +12,7 @@ public class Piece {
 
     public String getRepresentationTextuelle() {
         try {
-        	return SaisieConsole.generateColoredFGString(contenu.getTaille().getSymbole() + " ", contenu.getCouleur())+"|  ";
+        	return SaisieConsole.colorString(contenu.getTaille().getSymbole() + " ", contenu.getCouleur())+"|  ";
         } catch (Exception e) {
             return "  |  ";
         }

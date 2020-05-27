@@ -12,23 +12,28 @@ import gobblets.logic.PiecePasdisponibleException;
 
 //Classe définissant un joueur que l'on peut contrôler
 public class JoueurHumain extends Joueur {
+	private IHM i;
     public JoueurHumain(String nom, Couleur couleur) {
         super(nom, couleur);
+    }
+    
+    public JoueurHumain(String nom, Couleur couleur, IHM i) {
+        super(nom, couleur);
+        this.i = i;
     }
 
     //Implémentation de la méthode abstraite de la classe Joueur, utilise les méthodes de une instance de la classe IHM
     public Action choisirAction(Plateau p) throws Exception {
-        IHM i = new SaisieConsole();
         ActionType choix = i.saisirAction(this);
         switch (choix) {
-            case PLACER: return creerActionPlacer(i, p);
-            case DEPLACER: return creerActionDeplacer(i, p);
-            case QUITTER: return creerActionQuitter(i, p);
+            case PLACER: return Placer(i, p);
+            case DEPLACER: return Deplacer(i, p);
+            case QUITTER: return Quitter(i, p);
             default: return null;
         }
     }
 
-    private Action creerActionPlacer(IHM i, Plateau p) {
+    private Action Placer(IHM i, Plateau p) {
         try {
             System.out.println(i.getLanguage().avertissement(Avertissement.CHOIXDESTINATION));
             int[] coord = i.saisirCoordonnees();
@@ -42,7 +47,7 @@ public class JoueurHumain extends Joueur {
         }
     }
 
-    private Action creerActionDeplacer(IHM i, Plateau p) {
+    private Action Deplacer(IHM i, Plateau p) {
         try {
             int[] coord;
             System.out.println(i.getLanguage().avertissement(Avertissement.CHOIXORIGIN));
@@ -64,11 +69,19 @@ public class JoueurHumain extends Joueur {
         return coord[0] > 2 || coord[0] < 0 || coord[1] > 2 || coord[1] < 0;
     }
 
-    private Action creerActionQuitter(IHM i, Plateau p) {
+    private Action Quitter(IHM i, Plateau p) {
         return new Termination();
     }
 
-    public Object clone() {
+    public IHM getI() {
+		return i;
+	}
+
+	public void setI(IHM i) {
+		this.i = i;
+	}
+
+	public Object clone() {
         JoueurHumain cloneObject = new JoueurHumain(getNom(), getCouleur());
         cloneObject.setPieces(getPieces());
         return cloneObject;

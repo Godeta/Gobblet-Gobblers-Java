@@ -1,5 +1,10 @@
 package gobblets.logic;
 
+//pour les couleurs
+import static org.fusesource.jansi.Ansi.ansi;
+import static org.fusesource.jansi.Ansi.Color.BLUE;
+import static org.fusesource.jansi.Ansi.Color.WHITE;
+
 //Constructeur qui exploite des méthodes de saisie afin d'initialiser le jeu
 
 import java.util.Random;
@@ -21,20 +26,18 @@ import gobblets.ihm.langues.Francais;
 import gobblets.ihm.texte.SaisieConsole;
 import gobblets.interaction.Action;
 import gobblets.interaction.Termination;
-//pour les couleurs
-import static org.fusesource.jansi.Ansi.*;
-import static org.fusesource.jansi.Ansi.Color.*;
 
 public class Jeu {
     private Plateau plateau;
     private Joueur j1 = null, j2 = null, joueurActif = null;
     private Etat etat;
     private Scanner sc2  = new Scanner(System.in);
+    private IHM saisie;
 
     public Jeu() {
         plateau = Plateau.initPlateau();
         /* temp */
-        IHM saisie = new SaisieConsole();
+        saisie = new SaisieConsole();
         etat = Etat.JEUENCOURS;
   	  	//on effectue le choix de la langue une seule fois au début du jeu
         choixLangue(saisie);    
@@ -53,19 +56,23 @@ public class Jeu {
             if (current == Etat.JEUENCOURS) { // pas encore de gagnant
                 if (winner == j1.getCouleur()) { // j1 = gagnant
                     current = Etat.JOUEUR1GAGNE;
+                    System.out.println("Victoire du joueur 1 !!!");
                 }
                 else if (winner == j2.getCouleur()) { // j2 = gagnant
                     current = Etat.JOUEUR2GAGNE;
+                    System.out.println("Victoire du joueur 2 !!!");
                 }
             }
             // deja un gagnant
-            else if ((current == Etat.JOUEUR1GAGNE && winner == j2.getCouleur()) || (current == Etat.JOUEUR2GAGNE && winner == j1.getCouleur())) current = Etat.MATCHNUL;
+            else if ((current == Etat.JOUEUR1GAGNE && winner == j2.getCouleur()) || (current == Etat.JOUEUR2GAGNE && winner == j1.getCouleur())) {
+            	current = Etat.MATCHNUL; System.out.println("Match nul !");
+            }
         }
     }
 
     private Etat updateEtat(Etat current) {
         try {
-            for (int i = 0; i < 3; i++) { // parcour ligne et colonnes
+            for (int i = 0; i < 3; i++) { // parcours ligne et colonnes
                 if (plateau.verifierLigne(i) != null){
                     changeEtat(current, plateau.verifierLigne(i));
                 }
@@ -253,6 +260,13 @@ public class Jeu {
   		System.out.println("\n\n");
   		System.out.println("Ce projet a été fait en Mai 2020 dans le cadre de nos études à l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
   		System.out.println("\n\n");
+  	}
+  	
+  	public IHM getIHM () {
+  		return saisie;
+  	}
+  	public Dictionnaire getIHMLang () {
+  		return saisie.getLanguage();
   	}
   	
 }

@@ -98,7 +98,7 @@ public class SaisieConsole extends IHM {
         for (int i = 0; i < Couleur.values().length; i++) {
             s += i+1 + " : " + couleur(Couleur.values()[i]) + "   ";
         }
-        s += "* : annuler";
+        s += "(autre) : annuler";
         System.out.println(s);
         String in = sc.nextLine();
         switch (in) {
@@ -124,7 +124,7 @@ public class SaisieConsole extends IHM {
             default:
                 throw new Exception("Pas de couleur choisie.");
         }
-        return new JoueurHumain(nom, couleur);
+        return new JoueurHumain(nom, couleur, this);
     }
 
     
@@ -164,16 +164,9 @@ public class SaisieConsole extends IHM {
         return coord;
     }
 
-    public static String generateColoredBGString(String s, Couleur c) throws Exception {
-        if (s == null) throw new Exception("No string to operate on.");
-        if (c == null) throw new Exception("No color for the String");
-        String color = "\u001B[48;2;"+c.getR()+";"+c.getG()+";"+c.getB()+"m";
-        return color + s + "\u001B[m";
-    }
-
-    public static String generateColoredFGString(String s, Couleur c) throws Exception {
-        if (s == null) throw new Exception("No string to operate on.");
-        if (c == null) throw new Exception("No color for the String");
+    public static String colorString(String s, Couleur c) throws Exception {
+        if (s == null) throw new Exception("Pas de String.");
+        if (c == null) throw new Exception("Pas de couleur");
         String color = "\u001B[38;2;"+c.getR()+";"+c.getG()+";"+c.getB()+"m";
         return color + s + "\u001B[m";
     }
@@ -190,7 +183,7 @@ public class SaisieConsole extends IHM {
 
     public void display(gobblets.data.Plateau p, Joueur j) {
         try {
-            System.out.println(getLanguage().avertissement(Avertissement.NOMJOUEUR) + " : " + generateColoredBGString(" "+j.getNom()+" ", j.getCouleur()));
+            System.out.println(getLanguage().avertissement(Avertissement.NOMJOUEUR) + " : " + colorString(" "+j.getNom()+" ", j.getCouleur()));
             System.out.println(getLanguage().avertissement(Avertissement.MAISON) + " : " + displayHouse(j));
             Plateau pl = new Plateau(p);
             System.out.print(pl.getRepresentationTextuelle());;
