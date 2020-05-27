@@ -65,8 +65,8 @@ public class Anglais implements Dictionnaire {
 	        avertissements.put(Avertissement.NOMJOUEUR, "Player name");
 	        avertissements.put(Avertissement.TONTOUR, "Turn of");
 	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Coordonates input :");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "First coordonate");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Second coordonate");
+	        avertissements.put(Avertissement.SAISIELIGNE, "Enter the line");
+	        avertissements.put(Avertissement.SAISIECOLONNE, "Enter the column");
 	        avertissements.put(Avertissement.MAISON, "House");
 	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "Which type of player ?");
 	        avertissements.put(Avertissement.SAISIEJOUEUR, "Player input ");
@@ -74,6 +74,7 @@ public class Anglais implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURIA, "AI Player ");
 	        avertissements.put(Avertissement.ANNULER, "Cancel ");
 	        /* Menu */
+	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Help ");
 	        menu.put(Menu.MENU_APROPOS, "About me ");
 	        menu.put(Menu.MENU_ENREGISTRER, "Save ");

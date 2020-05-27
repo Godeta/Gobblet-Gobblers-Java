@@ -151,7 +151,7 @@ public class SaisieConsole extends IHM {
         Integer in = null;
         for (int i = 0; i < coord.length; i++) {
             do {
-                System.out.println((i==0 ? getLanguage().avertissement(Avertissement.SAISIECOORDONNEE1):getLanguage().avertissement(Avertissement.SAISIECOORDONNEE2)));
+                System.out.println((i==0 ? getLanguage().avertissement(Avertissement.SAISIELIGNE):getLanguage().avertissement(Avertissement.SAISIECOLONNE)));
                 String s = sc.nextLine();
                 try {
                     in = Integer.parseInt(s);

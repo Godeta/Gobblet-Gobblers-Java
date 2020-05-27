@@ -65,8 +65,8 @@ public class Espagnol implements Dictionnaire {
 	        avertissements.put(Avertissement.NOMJOUEUR, "Apellido del jugador");
 	        avertissements.put(Avertissement.TONTOUR, "Turno de");
 	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Ingresar coordenadas");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "Primera coordenada");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Segunda coordenada");
+	        avertissements.put(Avertissement.SAISIELIGNE, "Entra la linea");
+	        avertissements.put(Avertissement.SAISIECOLONNE, "Entra la columna");
 	        avertissements.put(Avertissement.MAISON, "Casa");
 	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "? Que tipo de jugador ?");
 	        avertissements.put(Avertissement.SAISIEJOUEUR, "Entrada del jugador ");
@@ -74,6 +74,7 @@ public class Espagnol implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURIA, "Jugador IA ");
 	        avertissements.put(Avertissement.ANNULER, "Cancelar ");
 	        /* Menu */
+	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Ayuda ");
 	        menu.put(Menu.MENU_APROPOS, "A proposito ");
 	        menu.put(Menu.MENU_ENREGISTRER, "Grabar ");

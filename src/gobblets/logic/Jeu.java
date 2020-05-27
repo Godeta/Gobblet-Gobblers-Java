@@ -11,7 +11,6 @@ import gobblets.data.Joueur;
 import gobblets.data.JoueurIA;
 import gobblets.data.Piece;
 import gobblets.data.Plateau;
-import gobblets.ihm.Avertissement;
 import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.IHM;
 import gobblets.ihm.Menu;
@@ -26,13 +25,18 @@ public class Jeu {
     private Plateau plateau;
     private Joueur j1 = null, j2 = null, joueurActif = null;
     private Etat etat;
+    private Scanner sc2  = new Scanner(System.in);
 
     public Jeu() {
         plateau = Plateau.initPlateau();
         /* temp */
         IHM saisie = new SaisieConsole();
         etat = Etat.JEUENCOURS;
-        menu_display(saisie);
+  	  	//on effectue le choix de la langue une seule fois au début du jeu
+        choixLangue(saisie);    
+        do {
+        System.out.println("Menu :");
+        } while (menu_display(saisie)==0);
     }
 
     public void changeJoueur() {
@@ -156,13 +160,10 @@ public class Jeu {
   	}
   	
   	/**
-  	 * Affichage du menu
+  	 * Affichage du menu, retourne 1 pour lancer la partie ou 0 pour retourner au menu
   	 * @param saisie
   	 */
-  	public void menu_display(IHM saisie) {
-  	  	//on effectue le choix de la langue une seule fois au début du jeu
-        choixLangue(saisie);
-  		Scanner sc2 = new Scanner(System.in);
+  	public int menu_display(IHM saisie) {
   		System.out.println(saisie.getLanguage().menu(Menu.MENU_NOUVEAU) + "(1)");
   		System.out.println(saisie.getLanguage().menu(Menu.MENU_FICHIER)+ "(2)");
   		System.out.println(saisie.getLanguage().menu(Menu.MENU_AIDE)+ "(3)");
@@ -176,18 +177,27 @@ public class Jeu {
         
         switch (in) {
         //nouvelle partie
-        case "1": debut(saisie); break;
+        case "1": debut(saisie); return 1;
         //fichier
-        case "2":  saisie.ouvrir(); break;
-        case "3":  sais.setLanguage(es); break;
-        default: in ="0"; System.out.println("Mauvais choix"+in);
+        case "2":  /*saisie.ouvrir();*/ break;
+        //aide
+        case "3":  aide(saisie); break;
+        //à propos
+        case "4":  Apropos(saisie); break;
+        //langue
+        case "5":  choixLangue(saisie); break;
+        //quitter
+        case "6": System.exit(0); ; break;
+        default: in ="0"; System.out.println("Mauvais choix"+in); 
         }
     } while(in=="0");
-  		
-
-       
+        return 0;
   	}
   	
+  	/**
+  	 * Pour la saisie des joueurs au début de la partie
+  	 * @param saisie
+  	 */
   	public void debut(IHM saisie) {
   		 /* init j1 */
         do {
@@ -227,4 +237,16 @@ public class Jeu {
         joueurActif = r.nextBoolean() ? j1 : j2;
   	}
 
+  	public void aide(IHM saisie) {
+  		System.out.println("\n\n\n\n");
+  		System.out.println("ba voilà quoi");
+  		System.out.println("\n\n\n\n");
+  	}
+  	
+  	public void Apropos(IHM saisie) {
+  		System.out.println("\n\n\n\n");
+  		System.out.println("Ce projet a été fait en Mai 2020 dans le cadre de nos études à l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
+  		System.out.println("\n\n\n\n");
+  	}
+  	
 }

@@ -64,8 +64,8 @@ public class Francais implements Dictionnaire {
 	        avertissements.put(Avertissement.NOMJOUEUR, "Nom joueur");
 	        avertissements.put(Avertissement.TONTOUR, "Tour de");
 	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Saisie coordonnées");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE1, "Première coordonnée");
-	        avertissements.put(Avertissement.SAISIECOORDONNEE2, "Seconde coordonnée");
+	        avertissements.put(Avertissement.SAISIELIGNE, "Entrez la ligne");
+	        avertissements.put(Avertissement.SAISIECOLONNE, "Entrez la colonne");
 	        avertissements.put(Avertissement.MAISON, "Maison");
 	        avertissements.put(Avertissement.CHOIXTYPEJOUEUR, "Quel type de joueur ?");
 	        avertissements.put(Avertissement.SAISIEJOUEUR, "Saisie du joueur ");
@@ -73,6 +73,7 @@ public class Francais implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURIA, "Joueur IA ");
 	        avertissements.put(Avertissement.ANNULER, "Annuler ");
 	        /* Menu */
+	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Aide ");
 	        menu.put(Menu.MENU_APROPOS, "A propos ");
 	        menu.put(Menu.MENU_ENREGISTRER, "Enregistrer ");
