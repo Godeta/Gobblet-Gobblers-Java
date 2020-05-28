@@ -19,3 +19,12 @@ Seulement 2 classes ajoutées, la classe Enregistrer dans gobblets.interaction qu
 
 Plusieurs méthodes ajoutées, les plus importantes sont dans la classe Jeu :
 
+Etat changeEtat(Etat current, Couleur winner) -> permet de changer l'état du jeu en cas de victoire ou de match nul pour finir la partie
+Etat actuaEtat(Etat current) -> actualise l'état en appelant changeEtat si les conditions sont réunies (3 pièces allignées...) sinon ne change pas
+void choixLangue(IHM saisie) -> demande la langue que l'on souhaite et change la langue du jeu selon notre choix
+public int menu_display(IHM saisie) -> affiche le menu et lance d'autres méthodes selon notre choix. retourne 1 pour lancer la partie et sortir du menu, 0 sinon
+void debut(IHM saisie) -> méthode utilisée pour la saisie des joueurs effectuée une fois au début de la partie
+public void Enregistrer() -> permet d'enregistrer l'objet Jeu dans le fichier game.txt
+void ouvrirF() -> ouvre le fichier game.txt pour charger une partie
+
+

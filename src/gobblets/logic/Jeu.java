@@ -81,7 +81,7 @@ public class Jeu implements Serializable{
         return Etat.MATCHNUL;
     }
 
-    private Etat updateEtat(Etat current) {
+    private Etat actuaEtat(Etat current) {
         try {
             for (int i = 0; i < 3; i++) { // parcours ligne 
                 if (plateau.verifierLigne(i) != null){
@@ -127,7 +127,7 @@ public class Jeu implements Serializable{
                     a.appliquer(joueurActif);
                     changeJoueur();
                 }
-                etatPlay = updateEtat(etatPlay);
+                etatPlay = actuaEtat(etatPlay);
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -169,7 +169,7 @@ public class Jeu implements Serializable{
  * Permet de choisir la langue du jeu
  * @param sais L'IHM sur laquelle on effectue la saisie
  */
-  	public void choixLangue(IHM sais) {
+  	public void choixLangue(IHM saisie) {
   		Scanner sc = new Scanner(System.in);
           System.out.println("Choisissez la langue du jeu : (1) francais, (2) anglais, (3) espagnol, (4) allemand");
           Dictionnaire fr = new Francais();
@@ -181,10 +181,10 @@ public class Jeu implements Serializable{
           in =sc.nextLine();
           
           switch (in) {
-          case "1": sais.setLanguage(fr); break;
-          case "2":  sais.setLanguage(an); break;
-          case "3":  sais.setLanguage(es); break;
-          case "4":  sais.setLanguage(alle); break;
+          case "1": saisie.setLanguage(fr); break;
+          case "2":  saisie.setLanguage(an); break;
+          case "3":  saisie.setLanguage(es); break;
+          case "4":  saisie.setLanguage(alle); break;
           default: in ="0"; System.out.println("Mauvais choix"+in);
           }
       } while(in=="0");
@@ -218,7 +218,7 @@ public class Jeu implements Serializable{
         //langue
         case "5":  choixLangue(saisie); break;
         //quitter
-        case "6": System.exit(0); ; break;
+        case "6": quitterJeu(); ; break;
         default: in ="0"; System.out.println("Mauvais choix"+in); 
         }
     } while(in=="0");
@@ -275,13 +275,17 @@ public class Jeu implements Serializable{
   				+ "\n - consulter l'aide, ce que vous faites actuellement"
   				+ "quitter le jeu"
   				+ "charger une partie avec fichier->charger");
-  		System.out.println("\n\n");
   	}
   	
   	public void Apropos(IHM saisie) {
   		System.out.println("\n\n");
   		System.out.println("Ce projet a ete fait en Mai 2020 dans le cadre de nos etudes a l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
-  		System.out.println("\n\n");
+  		System.out.println(ansi().fg(YELLOW).a("   _      ___     ___  ___   __  \r\n" + 
+  				"  /_\\    / _ \\   / _ \\/ _ \\ / /  \r\n" + 
+  				" //_\\\\  / /_\\/  / /_)/ /_\\// /   \r\n" + 
+  				"/  _  \\/ /_\\\\  / ___/ /_\\\\/ /___ \r\n" + 
+  				"\\_/ \\_/\\____/  \\/   \\____/\\____/ \r\n" + 
+  				"                                 \n").fg(WHITE));
   	}
   	
   	 public void Enregistrer() {
@@ -332,6 +336,22 @@ public class Jeu implements Serializable{
    			} catch (Exception a) {
    				a.printStackTrace();
    			}
+   	}
+   	
+   	public void quitterJeu() {
+   		System.out.println(ansi().fg(CYAN).a(" /$$                          \r\n" + 
+   				"| $$                          \r\n" + 
+   				"| $$$$$$$  /$$   /$$  /$$$$$$ \r\n" + 
+   				"| $$__  $$| $$  | $$ /$$__  $$\r\n" + 
+   				"| $$  \\ $$| $$  | $$| $$$$$$$$\r\n" + 
+   				"| $$  | $$| $$  | $$| $$_____/\r\n" + 
+   				"| $$$$$$$/|  $$$$$$$|  $$$$$$$\r\n" + 
+   				"|_______/  \\____  $$ \\_______/\r\n" + 
+   				"           /$$  | $$          \r\n" + 
+   				"          |  $$$$$$/          \r\n" + 
+   				"           \\______/   "));
+   		//quitter
+   		System.exit(0);
    	}
   	
   	public IHM getIHM () {

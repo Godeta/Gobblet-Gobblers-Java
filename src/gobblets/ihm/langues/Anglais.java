@@ -39,8 +39,22 @@ public class Anglais implements Dictionnaire {
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Game in process");
 	        etats.put(Etat.JEUQUITTE, "Exit game");
-	        etats.put(Etat.JOUEUR1GAGNE, "Player 1 won !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Player 2 won !");
+	        etats.put(Etat.JOUEUR1GAGNE, "        _                         __                         _ \r\n" + 
+	        		"       | |                       /_ |                       | |\r\n" + 
+	        		"  _ __ | | __ _ _   _  ___ _ __   | | __      _____  _ __   | |\r\n" + 
+	        		" | '_ \\| |/ _` | | | |/ _ \\ '__|  | | \\ \\ /\\ / / _ \\| '_ \\  | |\r\n" + 
+	        		" | |_) | | (_| | |_| |  __/ |     | |  \\ V  V / (_) | | | | |_|\r\n" + 
+	        		" | .__/|_|\\__,_|\\__, |\\___|_|     |_|   \\_/\\_/ \\___/|_| |_| (_)\r\n" + 
+	        		" | |             __/ |                                         \r\n" + 
+	        		" |_|            |___/                                          ");
+	        etats.put(Etat.JOUEUR2GAGNE, "        _                         ___                          _ \r\n" + 
+	        		"       | |                       |__ \\                        | |\r\n" + 
+	        		"  _ __ | | __ _ _   _  ___ _ __     ) | __      _____  _ __   | |\r\n" + 
+	        		" | '_ \\| |/ _` | | | |/ _ \\ '__|   / /  \\ \\ /\\ / / _ \\| '_ \\  | |\r\n" + 
+	        		" | |_) | | (_| | |_| |  __/ |     / /_   \\ V  V / (_) | | | | |_|\r\n" + 
+	        		" | .__/|_|\\__,_|\\__, |\\___|_|    |____|   \\_/\\_/ \\___/|_| |_| (_)\r\n" + 
+	        		" | |             __/ |                                           \r\n" + 
+	        		" |_|            |___/                                            ");
 	        etats.put(Etat.MATCHNUL, "No winner, it's a toe");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -78,14 +92,21 @@ public class Anglais implements Dictionnaire {
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Help ");
-	        menu.put(Menu.MENU_APROPOS, "About me ");
+	        menu.put(Menu.MENU_APROPOS, "About us ");
 	        menu.put(Menu.MENU_ENREGISTRER, "Save ");
 	        menu.put(Menu.MENU_FICHIER, "File ");
 	        menu.put(Menu.MENU_LANGUE, "Language ");
 	        menu.put(Menu.MENU_NOUVEAU, "New game ");
 	        menu.put(Menu.MENU_OUVRIR, "Open ");
 	        menu.put(Menu.MENU_QUITTER, "Quit ");
-	        menu.put(Menu.MENU_MENU, "Menu : ");
+	        menu.put(Menu.MENU_MENU, "                            \r\n" + 
+	        		"                            \r\n" + 
+	        		" _ __ ___   ___ _ __  _   _ \r\n" + 
+	        		"| '_ ` _ \\ / _ \\ '_ \\| | | |\r\n" + 
+	        		"| | | | | |  __/ | | | |_| |\r\n" + 
+	        		"|_| |_| |_|\\___|_| |_|\\__,_|\r\n" + 
+	        		"                            \r\n" + 
+	        		"                             ");
 	    }
 
 	    

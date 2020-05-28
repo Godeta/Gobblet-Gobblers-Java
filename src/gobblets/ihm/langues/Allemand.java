@@ -39,8 +39,22 @@ public class Allemand implements Dictionnaire {
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Gerade stattfindendes Spiel");
 	        etats.put(Etat.JEUQUITTE, "Das Spiel verlassen");
-	        etats.put(Etat.JOUEUR1GAGNE, "Der Spieler 1 hat gewonnen !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Der Spieler 2 hat gewonnen !");
+	        etats.put(Etat.JOUEUR1GAGNE, "  _____               _____       _      _             __   _           _                                                       _ \r\n" + 
+	        		" |  __ \\             / ____|     (_)    | |           /_ | | |         | |                                                     | |\r\n" + 
+	        		" | |  | | ___ _ __  | (___  _ __  _  ___| | ___ _ __   | | | |__   __ _| |_    __ _  _____      _____  _ __  _ __   ___ _ __   | |\r\n" + 
+	        		" | |  | |/ _ \\ '__|  \\___ \\| '_ \\| |/ _ \\ |/ _ \\ '__|  | | | '_ \\ / _` | __|  / _` |/ _ \\ \\ /\\ / / _ \\| '_ \\| '_ \\ / _ \\ '_ \\  | |\r\n" + 
+	        		" | |__| |  __/ |     ____) | |_) | |  __/ |  __/ |     | | | | | | (_| | |_  | (_| |  __/\\ V  V / (_) | | | | | | |  __/ | | | |_|\r\n" + 
+	        		" |_____/ \\___|_|    |_____/| .__/|_|\\___|_|\\___|_|     |_| |_| |_|\\__,_|\\__|  \\__, |\\___| \\_/\\_/ \\___/|_| |_|_| |_|\\___|_| |_| (_)\r\n" + 
+	        		"                           | |                                                 __/ |                                              \r\n" + 
+	        		"                           |_|                                                |___/                                               ");
+	        etats.put(Etat.JOUEUR2GAGNE, "  _____               _____       _      _             ___    _           _                                                       _ \r\n" + 
+	        		" |  __ \\             / ____|     (_)    | |           |__ \\  | |         | |                                                     | |\r\n" + 
+	        		" | |  | | ___ _ __  | (___  _ __  _  ___| | ___ _ __     ) | | |__   __ _| |_    __ _  _____      _____  _ __  _ __   ___ _ __   | |\r\n" + 
+	        		" | |  | |/ _ \\ '__|  \\___ \\| '_ \\| |/ _ \\ |/ _ \\ '__|   / /  | '_ \\ / _` | __|  / _` |/ _ \\ \\ /\\ / / _ \\| '_ \\| '_ \\ / _ \\ '_ \\  | |\r\n" + 
+	        		" | |__| |  __/ |     ____) | |_) | |  __/ |  __/ |     / /_  | | | | (_| | |_  | (_| |  __/\\ V  V / (_) | | | | | | |  __/ | | | |_|\r\n" + 
+	        		" |_____/ \\___|_|    |_____/| .__/|_|\\___|_|\\___|_|    |____| |_| |_|\\__,_|\\__|  \\__, |\\___| \\_/\\_/ \\___/|_| |_|_| |_|\\___|_| |_| (_)\r\n" + 
+	        		"                           | |                                                   __/ |                                              \r\n" + 
+	        		"                           |_|                                                  |___/                                               ");
 	        etats.put(Etat.MATCHNUL, "Zeichnen");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -78,14 +92,21 @@ public class Allemand implements Dictionnaire {
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Hilfe ");
-	        menu.put(Menu.MENU_APROPOS, "über mich ");
+	        menu.put(Menu.MENU_APROPOS, "über uns ");
 	        menu.put(Menu.MENU_ENREGISTRER, "speichern ");
 	        menu.put(Menu.MENU_FICHIER, "Datei ");
 	        menu.put(Menu.MENU_LANGUE, "Sprache ");
 	        menu.put(Menu.MENU_NOUVEAU, "neuer Teil ");
 	        menu.put(Menu.MENU_OUVRIR, "öffnen ");
 	        menu.put(Menu.MENU_QUITTER, "verlassen ");
-	        menu.put(Menu.MENU_MENU, "Speisekarte : ");
+	        menu.put(Menu.MENU_MENU, " _____            _          _              _       \r\n" + 
+	        		"/  ___|          (_)        | |            | |      \r\n" + 
+	        		"\\ `--. _ __   ___ _ ___  ___| | ____ _ _ __| |_ ___ \r\n" + 
+	        		" `--. \\ '_ \\ / _ \\ / __|/ _ \\ |/ / _` | '__| __/ _ \\\r\n" + 
+	        		"/\\__/ / |_) |  __/ \\__ \\  __/   < (_| | |  | ||  __/\r\n" + 
+	        		"\\____/| .__/ \\___|_|___/\\___|_|\\_\\__,_|_|   \\__\\___|\r\n" + 
+	        		"      | |                                           \r\n" + 
+	        		"      |_|                                           ");
 	    }
 
 	    

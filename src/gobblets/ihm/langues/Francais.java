@@ -38,8 +38,22 @@ public class Francais implements Dictionnaire {
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Jeu en cours");
 	        etats.put(Etat.JEUQUITTE, "Jeu quitter");
-	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 a gagne !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 a gagne !");
+	        etats.put(Etat.JOUEUR1GAGNE, "       _                               __                                     __   _ \r\n" + 
+	        		"      | |                             /_ |                                   /_/  | |\r\n" + 
+	        		"      | | ___  _   _  ___ _   _ _ __   | |   __ _    __ _  __ _  __ _ _ __   ___  | |\r\n" + 
+	        		"  _   | |/ _ \\| | | |/ _ \\ | | | '__|  | |  / _` |  / _` |/ _` |/ _` | '_ \\ / _ \\ | |\r\n" + 
+	        		" | |__| | (_) | |_| |  __/ |_| | |     | | | (_| | | (_| | (_| | (_| | | | |  __/ |_|\r\n" + 
+	        		"  \\____/ \\___/ \\__,_|\\___|\\__,_|_|     |_|  \\__,_|  \\__, |\\__,_|\\__, |_| |_|\\___| (_)\r\n" + 
+	        		"                                                     __/ |       __/ |               \r\n" + 
+	        		"                                                    |___/       |___/                ");
+	        etats.put(Etat.JOUEUR2GAGNE, "       _                               ___                                      __   _ \r\n" + 
+	        		"      | |                             |__ \\                                    /_/  | |\r\n" + 
+	        		"      | | ___  _   _  ___ _   _ _ __     ) |   __ _    __ _  __ _  __ _ _ __   ___  | |\r\n" + 
+	        		"  _   | |/ _ \\| | | |/ _ \\ | | | '__|   / /   / _` |  / _` |/ _` |/ _` | '_ \\ / _ \\ | |\r\n" + 
+	        		" | |__| | (_) | |_| |  __/ |_| | |     / /_  | (_| | | (_| | (_| | (_| | | | |  __/ |_|\r\n" + 
+	        		"  \\____/ \\___/ \\__,_|\\___|\\__,_|_|    |____|  \\__,_|  \\__, |\\__,_|\\__, |_| |_|\\___| (_)\r\n" + 
+	        		"                                                       __/ |       __/ |               \r\n" + 
+	        		"                                                      |___/       |___/                ");
 	        etats.put(Etat.MATCHNUL, "Match nul");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -77,14 +91,21 @@ public class Francais implements Dictionnaire {
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Aide ");
-	        menu.put(Menu.MENU_APROPOS, "A propos ");
+	        menu.put(Menu.MENU_APROPOS, "A propos de nous ");
 	        menu.put(Menu.MENU_ENREGISTRER, "Enregistrer ");
 	        menu.put(Menu.MENU_FICHIER, "Fichier ");
 	        menu.put(Menu.MENU_LANGUE, "Langue ");
 	        menu.put(Menu.MENU_NOUVEAU, "Nouvelle partie ");
 	        menu.put(Menu.MENU_OUVRIR, "Ouvrir ");
 	        menu.put(Menu.MENU_QUITTER, "Quitter ");
-	        menu.put(Menu.MENU_MENU, "Menu : ");
+	        menu.put(Menu.MENU_MENU, "                            \r\n" + 
+	        		"                            \r\n" + 
+	        		" _ __ ___   ___ _ __  _   _ \r\n" + 
+	        		"| '_ ` _ \\ / _ \\ '_ \\| | | |\r\n" + 
+	        		"| | | | | |  __/ | | | |_| |\r\n" + 
+	        		"|_| |_| |_|\\___|_| |_|\\__,_|\r\n" + 
+	        		"                            \r\n" + 
+	        		"                            ");
 	    }
 
 	    

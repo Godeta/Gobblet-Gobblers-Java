@@ -39,8 +39,22 @@ public class Espagnol implements Dictionnaire {
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Juego en progresso");
 	        etats.put(Etat.JEUQUITTE, "Salir del juego");
-	        etats.put(Etat.JOUEUR1GAGNE, "! Jugador 1 ganado !");
-	        etats.put(Etat.JOUEUR2GAGNE, "! Jugador 2 ganado !");
+	        etats.put(Etat.JOUEUR1GAGNE, "  _        _                       _              __                               _         _ \r\n" + 
+	        		" (_)      | |                     | |            /_ |                             | |       | |\r\n" + 
+	        		" | |      | |_   _  __ _  __ _  __| | ___  _ __   | |   __ _  __ _ _ __   __ _  __| | ___   | |\r\n" + 
+	        		" | |  _   | | | | |/ _` |/ _` |/ _` |/ _ \\| '__|  | |  / _` |/ _` | '_ \\ / _` |/ _` |/ _ \\  | |\r\n" + 
+	        		" | | | |__| | |_| | (_| | (_| | (_| | (_) | |     | | | (_| | (_| | | | | (_| | (_| | (_) | |_|\r\n" + 
+	        		" |_|  \\____/ \\__,_|\\__, |\\__,_|\\__,_|\\___/|_|     |_|  \\__, |\\__,_|_| |_|\\__,_|\\__,_|\\___/  (_)\r\n" + 
+	        		"                    __/ |                               __/ |                                  \r\n" + 
+	        		"                   |___/                               |___/                                   ");
+	        etats.put(Etat.JOUEUR2GAGNE, "  _        _                       _              ___                                _         _ \r\n" + 
+	        		" (_)      | |                     | |            |__ \\                              | |       | |\r\n" + 
+	        		" | |      | |_   _  __ _  __ _  __| | ___  _ __     ) |   __ _  __ _ _ __   __ _  __| | ___   | |\r\n" + 
+	        		" | |  _   | | | | |/ _` |/ _` |/ _` |/ _ \\| '__|   / /   / _` |/ _` | '_ \\ / _` |/ _` |/ _ \\  | |\r\n" + 
+	        		" | | | |__| | |_| | (_| | (_| | (_| | (_) | |     / /_  | (_| | (_| | | | | (_| | (_| | (_) | |_|\r\n" + 
+	        		" |_|  \\____/ \\__,_|\\__, |\\__,_|\\__,_|\\___/|_|    |____|  \\__, |\\__,_|_| |_|\\__,_|\\__,_|\\___/  (_)\r\n" + 
+	        		"                    __/ |                                 __/ |                                  \r\n" + 
+	        		"                   |___/                                 |___/                                   ");
 	        etats.put(Etat.MATCHNUL, "Empate");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -78,14 +92,21 @@ public class Espagnol implements Dictionnaire {
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Ayuda ");
-	        menu.put(Menu.MENU_APROPOS, "A proposito ");
+	        menu.put(Menu.MENU_APROPOS, "A proposito de nosotros");
 	        menu.put(Menu.MENU_ENREGISTRER, "Grabar ");
 	        menu.put(Menu.MENU_FICHIER, "Archivo ");
 	        menu.put(Menu.MENU_LANGUE, "Idioma ");
 	        menu.put(Menu.MENU_NOUVEAU, "Parte nueva ");
 	        menu.put(Menu.MENU_OUVRIR, "Abrir ");
 	        menu.put(Menu.MENU_QUITTER, "Salir ");
-	        menu.put(Menu.MENU_MENU, "Menu : ");
+	        menu.put(Menu.MENU_MENU, "                            \r\n" + 
+	        		"                            \r\n" + 
+	        		" _ __ ___   ___ _ __  _   _ \r\n" + 
+	        		"| '_ ` _ \\ / _ \\ '_ \\| | | |\r\n" + 
+	        		"| | | | | |  __/ | | | |_| |\r\n" + 
+	        		"|_| |_| |_|\\___|_| |_|\\__,_|\r\n" + 
+	        		"                            \r\n" + 
+	        		"                             ");
 	    }
 
 	    
