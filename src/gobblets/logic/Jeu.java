@@ -51,42 +51,44 @@ public class Jeu {
         else joueurActif = j1;
     }
 
-    private void changeEtat(Etat current, Couleur winner) {
+    private Etat changeEtat(Etat current, Couleur winner) {
         if (current != Etat.MATCHNUL && winner != null) { // si le jeu est deja match nul ou pas de gagnant rien a faire
             if (current == Etat.JEUENCOURS) { // pas encore de gagnant
                 if (winner == j1.getCouleur()) { // j1 = gagnant
-                    current = Etat.JOUEUR1GAGNE;
-                    System.out.println("Victoire du joueur 1 !!!");
+                    System.out.println(saisie.getLanguage().etat(Etat.JOUEUR1GAGNE));
+                   return Etat.JOUEUR1GAGNE;
                 }
                 else if (winner == j2.getCouleur()) { // j2 = gagnant
-                    current = Etat.JOUEUR2GAGNE;
-                    System.out.println("Victoire du joueur 2 !!!");
+                	System.out.println(saisie.getLanguage().etat(Etat.JOUEUR2GAGNE));
+                    return Etat.JOUEUR2GAGNE;
                 }
             }
             // deja un gagnant
             else if ((current == Etat.JOUEUR1GAGNE && winner == j2.getCouleur()) || (current == Etat.JOUEUR2GAGNE && winner == j1.getCouleur())) {
-            	current = Etat.MATCHNUL; System.out.println("Match nul !");
+            	System.out.println(saisie.getLanguage().etat(Etat.MATCHNUL));
+            	 return Etat.MATCHNUL;
             }
         }
+        return Etat.MATCHNUL;
     }
 
     private Etat updateEtat(Etat current) {
         try {
             for (int i = 0; i < 3; i++) { // parcours ligne et colonnes
                 if (plateau.verifierLigne(i) != null){
-                    changeEtat(current, plateau.verifierLigne(i));
+                    current =changeEtat(current, plateau.verifierLigne(i));
                 }
                 if (plateau.verifierColonne(i) != null) {
-                    changeEtat(current, plateau.verifierColonne(i));
+                    current = changeEtat(current, plateau.verifierColonne(i));
                 }
             }
             // premiere diagonale
             if (plateau.verifierDiagonale('a') != null) {
-                changeEtat(current, plateau.verifierDiagonale('a'));
+               current =  changeEtat(current, plateau.verifierDiagonale('a'));
             }
             // seconde diagonale
             if (plateau.verifierDiagonale('b') != null) {
-                changeEtat(current, plateau.verifierDiagonale('b'));
+               current =  changeEtat(current, plateau.verifierDiagonale('b'));
             }
         } catch (Exception e) {
             System.out.println(e);
