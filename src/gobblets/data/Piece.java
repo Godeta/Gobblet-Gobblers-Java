@@ -3,7 +3,7 @@ package gobblets.data;
 
 //definie une pièce et prend sa taille en paramètre dans le constructeur
 public class Piece {
-	//chaque pièce à une taille et une couleur
+	//chaque pièce a une taille et une couleur
 	    private Couleur couleur;
 	    private final Taille taille;
 

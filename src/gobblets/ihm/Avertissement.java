@@ -17,6 +17,7 @@ public enum Avertissement {
     JOUEURHUMAIN,
     JOUEURIA,
     ANNULER,
+    AUTRE,
     CHOIXTYPEJOUEUR;
 
     Avertissement() {}

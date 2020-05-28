@@ -73,6 +73,7 @@ public class Espagnol implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "Jugador Humano ");
 	        avertissements.put(Avertissement.JOUEURIA, "Jugador IA ");
 	        avertissements.put(Avertissement.ANNULER, "Cancelar ");
+	        avertissements.put(Avertissement.AUTRE, "(Otro) ");
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Ayuda ");

@@ -73,6 +73,7 @@ public class Allemand implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "menschlicher Spieler");
 	        avertissements.put(Avertissement.JOUEURIA, "künstliche Intelligenz ");
 	        avertissements.put(Avertissement.ANNULER, "Abbrechen ");
+	        avertissements.put(Avertissement.AUTRE, "(Andere) ");
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Hilfe ");

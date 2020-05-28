@@ -33,7 +33,7 @@ public abstract class Joueur {
         this.pieces = pieces;
     }
 
-    //methode qui ajoute une pièce à la maison du joueur, en affectant la couleur du joueur au champ couleur de la pièce
+    //methode qui ajoute une pièce a la maison du joueur, en affectant la couleur du joueur au champ couleur de la pièce
     public void ajoutPiece(Piece p) throws PiecePasdisponibleException {
         if (p != null) {
             pieces.add(p);

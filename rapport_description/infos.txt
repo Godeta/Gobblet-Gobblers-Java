@@ -7,7 +7,7 @@ Je vous demande ainsi de creer une petite video de demonstration (environ 5
 minutes) de votre projet dans laquelle vous demontrez les differentes
 fonctionnalites que vous avez implementees.
 
-Il y a des propositions d'outil pour enregistrer son ecran à
+Il y a des propositions d'outil pour enregistrer son ecran a
 https://www.ubuntupit.com/15-best-linux-screen-recorder-and-how-to-install-those-on-ubuntu/.
 Mme Flipo a ajoute DaVinci Resolve et Wondershare Filmora comme options.
 

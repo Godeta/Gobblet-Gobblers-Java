@@ -202,7 +202,7 @@ public class Jeu {
         case "2":  /*saisie.ouvrir();*/ break;
         //aide
         case "3":  aide(saisie); break;
-        //à propos
+        //a propos
         case "4":  Apropos(saisie); break;
         //langue
         case "5":  choixLangue(saisie); break;
@@ -259,13 +259,17 @@ public class Jeu {
 
   	public void aide(IHM saisie) {
   		System.out.println("\n\n");
-  		System.out.println("ba voilà quoi");
+  		System.out.println("Depuis le menu vous pouvez : \n - Lancer une partie puis suivez les instructions pour jouer"
+  				+ "\n - changer la langue "
+  				+ "\n - consulter l'aide, ce que vous faites actuellement"
+  				+ "quitter le jeu"
+  				+ "charger une partie avec fichier->charger");
   		System.out.println("\n\n");
   	}
   	
   	public void Apropos(IHM saisie) {
   		System.out.println("\n\n");
-  		System.out.println("Ce projet a ete fait en Mai 2020 dans le cadre de nos etudes à l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
+  		System.out.println("Ce projet a ete fait en Mai 2020 dans le cadre de nos etudes a l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
   		System.out.println("\n\n");
   	}
   	

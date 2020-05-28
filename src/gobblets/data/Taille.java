@@ -4,7 +4,7 @@ public enum Taille {
     PETITE('o'),
     MOYENNE('O'),
     GRANDE('0');
-//chaque pièce à un symbole
+//chaque pièce a un symbole
     private char symbole;
     Taille(char c) {
         symbole = c;

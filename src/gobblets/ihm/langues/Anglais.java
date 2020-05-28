@@ -73,6 +73,7 @@ public class Anglais implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "Human Player ");
 	        avertissements.put(Avertissement.JOUEURIA, "AI Player ");
 	        avertissements.put(Avertissement.ANNULER, "Cancel ");
+	        avertissements.put(Avertissement.AUTRE, "(Other) ");
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Help ");

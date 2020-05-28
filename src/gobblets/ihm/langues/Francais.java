@@ -38,8 +38,8 @@ public class Francais implements Dictionnaire {
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Jeu en cours");
 	        etats.put(Etat.JEUQUITTE, "Jeu quitter");
-	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 à gagne !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 à gagne !");
+	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 a gagne !");
+	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 a gagne !");
 	        etats.put(Etat.MATCHNUL, "Match nul");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -72,6 +72,7 @@ public class Francais implements Dictionnaire {
 	        avertissements.put(Avertissement.JOUEURHUMAIN, "Joueur Humain ");
 	        avertissements.put(Avertissement.JOUEURIA, "Joueur IA ");
 	        avertissements.put(Avertissement.ANNULER, "Annuler ");
+	        avertissements.put(Avertissement.AUTRE, "(Autre) ");
 	        /* Menu */
 	        menu = new HashMap<Menu, String>();
 	        menu.put(Menu.MENU_AIDE, "Aide ");

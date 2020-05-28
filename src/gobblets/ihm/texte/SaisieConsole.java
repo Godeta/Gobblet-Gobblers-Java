@@ -20,7 +20,7 @@ public class SaisieConsole extends IHM {
         Joueur j = null;
         System.out.println(getLanguage().avertissement(Avertissement.CHOIXTYPEJOUEUR));
         System.out.println("1 : "+getLanguage().avertissement(Avertissement.JOUEURHUMAIN)+
-        		" | 2 : "+getLanguage().avertissement(Avertissement.JOUEURIA)+" | * : "+
+        		" | 2 : "+getLanguage().avertissement(Avertissement.JOUEURIA)+" | "+getLanguage().avertissement(Avertissement.AUTRE)+ " :" +
         		getLanguage().avertissement(Avertissement.ANNULER));
         int choice = 0;
         try {
@@ -58,7 +58,7 @@ public class SaisieConsole extends IHM {
         for (int i = 0; i < Couleur.values().length; i++) {
             s += i + 1 + " : " + couleur(Couleur.values()[i]) + "   ";
         }
-        s += "* : annuler";
+        s += " | "+getLanguage().avertissement(Avertissement.AUTRE)+ " : "+getLanguage().avertissement(Avertissement.ANNULER);
         System.out.println(s);
         String in = sc.nextLine();
         switch (in) {
@@ -98,7 +98,7 @@ public class SaisieConsole extends IHM {
         for (int i = 0; i < Couleur.values().length; i++) {
             s += i+1 + " : " + couleur(Couleur.values()[i]) + "   ";
         }
-        s += "(autre) : annuler";
+        s += " | "+getLanguage().avertissement(Avertissement.AUTRE)+ " :"+getLanguage().avertissement(Avertissement.ANNULER);
         System.out.println(s);
         String in = sc.nextLine();
         switch (in) {
@@ -134,7 +134,7 @@ public class SaisieConsole extends IHM {
         for (int i = 0; i < Taille.values().length; i++) {
             s += i+1 + " : " + super.getLanguage().taille(Taille.values()[i]) + "   ";
         }
-        s += "* : annuler";
+        s += " | "+getLanguage().avertissement(Avertissement.AUTRE)+ " : "+getLanguage().avertissement(Avertissement.ANNULER);
         System.out.println(s);
         String in = sc.nextLine();
         switch (in) {
@@ -198,7 +198,7 @@ public class SaisieConsole extends IHM {
         for (int i = 0; i < ActionType.values().length; i++) {
             s += i+1 + " : " + action(ActionType.values()[i]) + "   ";
         }
-        s += "* : annuler";
+        s += " | "+getLanguage().avertissement(Avertissement.AUTRE)+ " : "+getLanguage().avertissement(Avertissement.ANNULER);
         System.out.println(s);
         String in = sc.nextLine();
         switch (in) {

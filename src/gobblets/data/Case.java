@@ -1,6 +1,6 @@
 package gobblets.data;
 
-//Constructeur qui initialise les references vers les pièces à null
+//Constructeur qui initialise les references vers les pièces a null
 public class Case {
 	//3 types de pièces
     private Piece petite, moyenne, grande;
