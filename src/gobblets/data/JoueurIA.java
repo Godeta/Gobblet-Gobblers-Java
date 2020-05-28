@@ -1,9 +1,6 @@
 package gobblets.data;
 
-import java.util.ArrayList;
-
 import gobblets.interaction.Action;
-import gobblets.interaction.Deplacement;
 import gobblets.interaction.Placement;
 
 //Implementation de la methode de la classe Joueur, utilise une logique interne afin de selectionner une action
@@ -34,9 +31,9 @@ public class JoueurIA extends Joueur {
     		//random endroit 
     		abs = getRandomIntegerBetweenRange(0,2);
     		ord = getRandomIntegerBetweenRange(0,2);
-    		a = new Placement(TAIL, p.getPlateau()[abs][ord]);
     	}
 
+		a = new Placement(TAIL, p.getPlateau()[abs][ord]);
         return a;
     }
     

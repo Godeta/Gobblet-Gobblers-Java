@@ -20,6 +20,7 @@ public class GobbletMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if(gobblets.getEtat()==Etat.JEUQUITTE) {run=false;}
         System.out.println("\n");
 	}
 		

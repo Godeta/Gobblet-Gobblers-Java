@@ -74,10 +74,10 @@ public class Jeu {
 
     private Etat updateEtat(Etat current) {
         try {
-            for (int i = 0; i < 3; i++) { // parcours ligne et colonnes
+            for (int i = 0; i < 3; i++) { // parcours ligne 
                 if (plateau.verifierLigne(i) != null){
                     current =changeEtat(current, plateau.verifierLigne(i));
-                }
+                } //parcours colonnes
                 if (plateau.verifierColonne(i) != null) {
                     current = changeEtat(current, plateau.verifierColonne(i));
                 }
@@ -86,9 +86,14 @@ public class Jeu {
             if (plateau.verifierDiagonale('a') != null) {
                current =  changeEtat(current, plateau.verifierDiagonale('a'));
             }
-            // seconde diagonale
+            // deuxième diagonale
             if (plateau.verifierDiagonale('b') != null) {
                current =  changeEtat(current, plateau.verifierDiagonale('b'));
+            }
+            //si il n'y a plus de pièces
+            if (j1.getPieces().isEmpty() && j2.getPieces().isEmpty()) {
+            	System.out.println(saisie.getLanguage().etat(Etat.MATCHNUL));
+            return Etat.MATCHNUL;
             }
         } catch (Exception e) {
             System.out.println(e);
