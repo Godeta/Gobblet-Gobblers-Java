@@ -1,9 +1,17 @@
 package gobblets.logic;
 
 //pour les couleurs
-import static org.fusesource.jansi.Ansi.ansi;
-import static org.fusesource.jansi.Ansi.Color.BLUE;
-import static org.fusesource.jansi.Ansi.Color.WHITE;
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 //Constructeur qui exploite des methodes de saisie afin d'initialiser le jeu
 
@@ -25,14 +33,15 @@ import gobblets.ihm.langues.Espagnol;
 import gobblets.ihm.langues.Francais;
 import gobblets.ihm.texte.SaisieConsole;
 import gobblets.interaction.Action;
+import gobblets.interaction.Enregistrer;
 import gobblets.interaction.Termination;
 
-public class Jeu {
+public class Jeu implements Serializable{
     private Plateau plateau;
     private Joueur j1 = null, j2 = null, joueurActif = null;
     private Etat etat;
-    private Scanner sc2  = new Scanner(System.in);
-    private IHM saisie;
+    private transient Scanner sc2  = new Scanner(System.in);
+    private transient IHM saisie;
 
     public Jeu() {
         plateau = Plateau.initPlateau();
@@ -55,11 +64,11 @@ public class Jeu {
         if (current != Etat.MATCHNUL && winner != null) { // si le jeu est deja match nul ou pas de gagnant rien a faire
             if (current == Etat.JEUENCOURS) { // pas encore de gagnant
                 if (winner == j1.getCouleur()) { // j1 = gagnant
-                    System.out.println(saisie.getLanguage().etat(Etat.JOUEUR1GAGNE));
+                    System.out.println(ansi().fg(YELLOW).a(saisie.getLanguage().etat(Etat.JOUEUR1GAGNE)).fg(WHITE));
                    return Etat.JOUEUR1GAGNE;
                 }
                 else if (winner == j2.getCouleur()) { // j2 = gagnant
-                	System.out.println(saisie.getLanguage().etat(Etat.JOUEUR2GAGNE));
+                	System.out.println(ansi().fg(YELLOW).a(saisie.getLanguage().etat(Etat.JOUEUR2GAGNE)).fg(RED));
                     return Etat.JOUEUR2GAGNE;
                 }
             }
@@ -108,9 +117,11 @@ public class Jeu {
         try {
             a = joueurActif.choisirAction(plateau);
             if (a != null) {
-                /* detection termination */
+                /* detection de termination */
                 if (a instanceof Termination)
                     return Etat.JEUQUITTE;
+                if (a instanceof Enregistrer) {
+                	Enregistrer(); return etatPlay;}
                 /* autres */
                 if (a.verifier(joueurActif)) {
                     a.appliquer(joueurActif);
@@ -199,7 +210,7 @@ public class Jeu {
         //nouvelle partie
         case "1": debut(saisie); return 1;
         //fichier
-        case "2":  /*saisie.ouvrir();*/ break;
+        case "2":  ouvrirF(); return 1;
         //aide
         case "3":  aide(saisie); break;
         //a propos
@@ -272,6 +283,56 @@ public class Jeu {
   		System.out.println("Ce projet a ete fait en Mai 2020 dans le cadre de nos etudes a l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
   		System.out.println("\n\n");
   	}
+  	
+  	 public void Enregistrer() {
+     	//Nous déclarons nos objets en dehors du bloc try/catch
+         ObjectOutputStream oos;
+         try {
+           oos = new ObjectOutputStream(
+                   new BufferedOutputStream(
+                     new FileOutputStream(
+                       new File("game.txt"))));
+             	
+           //Nous allons écrire chaque objet Game dans le fichier
+           oos.writeObject(this);
+           //Ne pas oublier de fermer le flux !
+           oos.close();
+     } catch (Exception e) {
+     	System.out.println(e);
+     }
+     }
+  	 
+  	/**
+   	 * Permet d'ouvrir un fichier de sauvegarde pour charger un jeu
+   	 */
+   	public void ouvrirF() {
+   		  //Nous déclarons nos objets en dehors du bloc try/catch
+   		    ObjectInputStream ois;
+   		  try {   	
+   		      //On récupère maintenant les données !
+   		      ois = new ObjectInputStream(
+   		              new BufferedInputStream(
+   		                new FileInputStream(
+   		                  new File("game.txt"))));
+   		      try {
+   		        System.out.println("Chargement du plateau :");
+   		        Jeu a = (Jeu)ois.readObject();
+   		        this.j1= a.j1;
+   		        this.j2 = a.j2;
+   		        this.joueurActif= a.joueurActif;
+   		        this.plateau=a.plateau;
+   		        this.etat=a.etat;
+   		        System.out.println("Joueur 1 :"+j1.getNom()+ j1.toString() + "Joueur 2"+j2.getNom()+j2.toString());
+   		        System.out.println("plateau:"+plateau.toString());
+   		      } catch (Exception e) {
+   		        e.printStackTrace();
+   		      }
+   			
+   		      ois.close();
+   			} catch (Exception a) {
+   				a.printStackTrace();
+   			}
+   	}
   	
   	public IHM getIHM () {
   		return saisie;

@@ -20,10 +20,11 @@ public class GobbletMain {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if(gobblets.getEtat()==Etat.JEUQUITTE) {run=false;}
+        if(gobblets.getEtat()==Etat.JEUQUITTE) {System.out.println("De retour au menu ! ");}
         System.out.println("\n");
 	}
 		
 	}
 
+  	
 }

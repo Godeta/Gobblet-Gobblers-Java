@@ -1,10 +1,12 @@
 package gobblets.data;
 
+import java.io.Serializable;
+
 import gobblets.interaction.Action;
 import gobblets.interaction.Placement;
 
 //Implementation de la methode de la classe Joueur, utilise une logique interne afin de selectionner une action
-public class JoueurIA extends Joueur {
+public class JoueurIA extends Joueur implements Serializable {
     private Joueur adversaire;
 
     public JoueurIA(String nom, Couleur couleur) {

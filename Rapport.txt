@@ -1,0 +1,21 @@
+Gobblet-Gobblers-Java :
+
+Utilisation :
+Ouvez le dossier Gobblet-Gobblers-Java dans le terminal
+Entrez -> java -jar GameGobblet.jar
+
+Voir le gif pour un exemple du programme en fonctionnement.
+
+Pour compiler le code source :
+Il faut intégrer la bibliothèque Jansi : https://github.com/fusesource/jansi
+qui permet de voir les couleurs dans le terminal.
+
+Attention,si vous utilisez Eclipse téléchargez également ce plug-in pour voir les couleurs dans le terminal d'Eclipse au lieu des codes Ansi :
+http://mihai-nita.net/2013/06/03/eclipse-plugin-ansi-in-console/
+
+Classes et méthodes ajoutées :
+
+Seulement 2 classes ajoutées, la classe Enregistrer dans gobblets.interaction qui hérite de Action et la classe Espagnol dans langues qui hérite de Dictionnaire.
+
+Plusieurs méthodes ajoutées, les plus importantes sont dans la classe Jeu :
+

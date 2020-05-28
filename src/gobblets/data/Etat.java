@@ -5,6 +5,7 @@ public enum Etat {
     JEUQUITTE,
 	JOUEUR1GAGNE,
     JOUEUR2GAGNE,
+    ENREGISTRER,
     MATCHNUL;
 
     Etat() {}

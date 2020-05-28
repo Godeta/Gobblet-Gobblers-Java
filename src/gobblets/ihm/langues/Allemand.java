@@ -47,6 +47,7 @@ public class Allemand implements Dictionnaire {
 	        actions.put(ActionType.DEPLACER, "Bewegung");
 	        actions.put(ActionType.PLACER, "Hinstellen");
 	        actions.put(ActionType.QUITTER, "Verlassen");
+	        actions.put(ActionType.ENREGISTRER, "Aufzeichnung");
 	        /* erreurs */
 	        erreurs = new HashMap<Erreur, String>();
 	        erreurs.put(Erreur.ARGUMENTINCORECT, "falsches Argument");

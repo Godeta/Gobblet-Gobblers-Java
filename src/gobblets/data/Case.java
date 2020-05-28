@@ -1,7 +1,9 @@
 package gobblets.data;
 
+import java.io.Serializable;
+
 //Constructeur qui initialise les references vers les pièces a null
-public class Case {
+public class Case implements Serializable{
 	//3 types de pièces
     private Piece petite, moyenne, grande;
 

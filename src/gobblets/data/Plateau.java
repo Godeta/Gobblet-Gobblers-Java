@@ -1,10 +1,15 @@
 package gobblets.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 //modelise le plateau du jeu
-public class Plateau {
+public class Plateau implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8462261869988175771L;
 	//9 cases, 3 lignes et 3 colonnes
     private Case[][] cases = new Case[3][3];
     //il y a une maison par joueurs

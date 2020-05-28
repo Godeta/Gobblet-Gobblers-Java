@@ -1,5 +1,6 @@
 package gobblets.ihm.texte;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import gobblets.data.ActionType;
@@ -11,8 +12,8 @@ import gobblets.data.Taille;
 import gobblets.ihm.Avertissement;
 import gobblets.ihm.IHM;
 
-public class SaisieConsole extends IHM {
-    private final static Scanner sc = new Scanner(System.in);
+public class SaisieConsole extends IHM implements Serializable {
+    private transient final static Scanner sc = new Scanner(System.in);
     public SaisieConsole() { }
 
     public Joueur saisirJoueur(int n) throws Exception {
@@ -204,7 +205,8 @@ public class SaisieConsole extends IHM {
         switch (in) {
             case "1": return ActionType.PLACER;
             case "2": return ActionType.DEPLACER;
-            case "3": return ActionType.QUITTER;
+            case "3": return ActionType.ENREGISTRER;
+            case "4": return ActionType.QUITTER;
             default: throw new Exception("annulation action");
         }
     }

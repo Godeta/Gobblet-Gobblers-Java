@@ -47,6 +47,7 @@ public class Espagnol implements Dictionnaire {
 	        actions.put(ActionType.DEPLACER, "Moverse");
 	        actions.put(ActionType.PLACER, "Poner");
 	        actions.put(ActionType.QUITTER, "Salir");
+	        actions.put(ActionType.ENREGISTRER, "Grabar");
 	        /* erreurs */
 	        erreurs = new HashMap<Erreur, String>();
 	        erreurs.put(Erreur.ARGUMENTINCORECT, "Argumento incorrecto");

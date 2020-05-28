@@ -1,17 +1,19 @@
 package gobblets.data;
 
+import java.io.Serializable;
+
 import gobblets.ihm.Avertissement;
 import gobblets.ihm.Erreur;
 import gobblets.ihm.IHM;
-import gobblets.ihm.texte.SaisieConsole;
 import gobblets.interaction.Action;
 import gobblets.interaction.Deplacement;
+import gobblets.interaction.Enregistrer;
 import gobblets.interaction.Placement;
 import gobblets.interaction.Termination;
 import gobblets.logic.PiecePasdisponibleException;
 
 //Classe definissant un joueur que l'on peut contrôler
-public class JoueurHumain extends Joueur {
+public class JoueurHumain extends Joueur implements Serializable {
 	private IHM i;
     public JoueurHumain(String nom, Couleur couleur) {
         super(nom, couleur);
@@ -28,6 +30,7 @@ public class JoueurHumain extends Joueur {
         switch (choix) {
             case PLACER: return Placer(i, p);
             case DEPLACER: return Deplacer(i, p);
+            case ENREGISTRER: return new Enregistrer();
             case QUITTER: return Quitter(i, p);
             default: return null;
         }

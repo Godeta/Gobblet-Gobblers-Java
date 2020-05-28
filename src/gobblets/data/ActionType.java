@@ -3,6 +3,7 @@ package gobblets.data;
 public enum ActionType {
     PLACER,
     DEPLACER,
+    ENREGISTRER,
     QUITTER;
 
     ActionType() {};

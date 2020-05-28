@@ -46,6 +46,7 @@ public class Francais implements Dictionnaire {
 	        actions.put(ActionType.DEPLACER, "Deplacer");
 	        actions.put(ActionType.PLACER, "Placer");
 	        actions.put(ActionType.QUITTER, "Quitter");
+	        actions.put(ActionType.ENREGISTRER, "Enregistrer");
 	        /* erreurs */
 	        erreurs = new HashMap<Erreur, String>();
 	        erreurs.put(Erreur.ARGUMENTINCORECT, "Argument incorrect");

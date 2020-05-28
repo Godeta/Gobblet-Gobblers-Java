@@ -1,8 +1,9 @@
 package gobblets.data;
 
+import java.io.Serializable;
 
 //definie une pièce et prend sa taille en paramètre dans le constructeur
-public class Piece {
+public class Piece implements Serializable{
 	//chaque pièce a une taille et une couleur
 	    private Couleur couleur;
 	    private final Taille taille;
