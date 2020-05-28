@@ -10,7 +10,7 @@ public class GobbletMain {
 	public static void main(String[] args){
 		while(run) {
 		Jeu gobblets = new Jeu();
-		//l'ihm, nottament sa langue est initialisée dans jeu donc on le récupère
+		//l'ihm, nottament sa langue est initialisee dans jeu donc on le recupère
         IHM ihm = gobblets.getIHM();
         try {
         	while (gobblets.getEtat() == Etat.JEUENCOURS) {

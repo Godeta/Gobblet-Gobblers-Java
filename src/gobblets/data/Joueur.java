@@ -6,7 +6,7 @@ import gobblets.ihm.Erreur;
 import gobblets.interaction.Action;
 import gobblets.logic.PiecePasdisponibleException;
 
-//Cette classe modélise un joueur générique
+//Cette classe modelise un joueur generique
 public abstract class Joueur {
     private final String nom;
     private final Couleur couleur;
@@ -23,17 +23,17 @@ public abstract class Joueur {
         return couleur;
     }
 
-    //méthode qui retourne les pièces que l'utilisateur n'a pas encore placées
+    //methode qui retourne les pièces que l'utilisateur n'a pas encore placees
     public ArrayList<Piece> getPieces() {
         return pieces;
     }
 
-    //setter pour les éléments de la maison du joueur
+    //setter pour les elements de la maison du joueur
     public void setPieces(ArrayList<Piece> pieces) {
         this.pieces = pieces;
     }
 
-    //méthode qui ajoute une pièce à la maison du joueur, en affectant la couleur du joueur au champ couleur de la pièce
+    //methode qui ajoute une pièce à la maison du joueur, en affectant la couleur du joueur au champ couleur de la pièce
     public void ajoutPiece(Piece p) throws PiecePasdisponibleException {
         if (p != null) {
             pieces.add(p);
@@ -41,12 +41,12 @@ public abstract class Joueur {
         else throw new PiecePasdisponibleException(Erreur.ARGUMENTINCORECT);
     }
 
-    //teste si la pièce passée en paramètre appartient au joueur
+    //teste si la pièce passee en paramètre appartient au joueur
     public boolean aPiece(Piece p) {
         return pieces.contains(p);
     }
 
-    //enlève une pièce d'une taille donnée de la maison du joueur
+    //enlève une pièce d'une taille donnee de la maison du joueur
     public Piece enlevePiece(Taille t) throws Exception {
         try {
             if (aPieceDeTaille(t)) {

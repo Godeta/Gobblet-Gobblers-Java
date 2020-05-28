@@ -1,16 +1,16 @@
 package gobblets.data;
 
-//Constructeur qui initialise les références vers les pièces à null
+//Constructeur qui initialise les references vers les pièces à null
 public class Case {
 	//3 types de pièces
     private Piece petite, moyenne, grande;
 
-//teste si la case peut accepter une pièce d'une taille donnée, retourne true si elle peut être placée
+//teste si la case peut accepter une pièce d'une taille donnee, retourne true si elle peut être placee
 public boolean acceptePiece(Taille t) {
     return t.recouvre(plusGrandePiece());
 }
 
-//enleve la plus grande pièce de la case et retourne sa référence
+//enleve la plus grande pièce de la case et retourne sa reference
 public Piece enlevePiece() {
     Piece rPiece = plusGrandePiece();
     if (grande != null) grande = null;
@@ -38,7 +38,7 @@ public void placePiece(Piece p) {
     }
 }
 
-//retourne la référence vers la plus grande pièce, sans enlever la pièce
+//retourne la reference vers la plus grande pièce, sans enlever la pièce
 public Piece plusGrandePiece() {
   return grande != null ? grande : moyenne != null ? moyenne : petite;
 }

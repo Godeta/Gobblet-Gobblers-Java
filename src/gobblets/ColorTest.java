@@ -12,8 +12,8 @@ public class ColorTest {
 		System.setProperty("jansi.passthrough", "true");
 		
 		AnsiConsole.systemInstall();
-		/*test pour vérifier que le plug-in eclipse http://mihai-nita.net/2013/06/03/eclipse-plugin-ansi-in-console/
-		 *  a bien été installé et permet de voir les couleurs
+		/*test pour verifier que le plug-in eclipse http://mihai-nita.net/2013/06/03/eclipse-plugin-ansi-in-console/
+		 *  a bien ete installe et permet de voir les couleurs
 		 */
 		System.out.println("Hello \u001b[1;31mred\u001b[0m world!");
 		

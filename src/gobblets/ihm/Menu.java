@@ -1,6 +1,6 @@
 package gobblets.ihm;
 
-//Énumération qui contient les différents éléments du menu
+//enumeration qui contient les differents elements du menu
 public enum Menu {
 	MENU_AIDE, 
 	MENU_APROPOS, 

@@ -11,7 +11,7 @@ import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.Erreur;
 import gobblets.ihm.Menu;
 
-//Classe qui implémente le dictionnaire anglais
+//Classe qui implemente le dictionnaire anglais
 public class Allemand implements Dictionnaire {
 
 	 private HashMap<Couleur, String> couleurs;

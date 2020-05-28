@@ -1,5 +1,5 @@
 package gobblets.data;
-//enumeration, on a 3 tailles différentes
+//enumeration, on a 3 tailles differentes
 public enum Taille {
     PETITE('o'),
     MOYENNE('O'),
@@ -11,9 +11,9 @@ public enum Taille {
     }
 
     public char getSymbole() { return symbole; }
-    //teste si la taille peut recouvrir la pièce passé en paramètre
+    //teste si la taille peut recouvrir la pièce passe en paramètre
     public boolean recouvre(Taille t) { return t == null || getSymbole()<t.getSymbole(); }
-    //teste si la taille peut recouvrir la taille passé en paramètre
+    //teste si la taille peut recouvrir la taille passe en paramètre
     public boolean recouvre(Piece p) { return p == null || recouvre(p.getTaille()); }
     
 }

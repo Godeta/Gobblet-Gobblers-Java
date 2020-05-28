@@ -7,7 +7,7 @@ import gobblets.data.Couleur;
 import gobblets.data.Etat;
 import gobblets.data.Taille;
 
-//Cette classe modélise le dictionnaire à utiliser pour les traductions des textes
+//Cette classe modelise le dictionnaire à utiliser pour les traductions des textes
 public interface Dictionnaire {
     public String couleur(Couleur c);
     public String taille(Taille t);

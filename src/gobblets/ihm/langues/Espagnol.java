@@ -11,7 +11,7 @@ import gobblets.ihm.Dictionnaire;
 import gobblets.ihm.Erreur;
 import gobblets.ihm.Menu;
 
-//Classe qui implémente le dictionnaire espagnol
+//Classe qui implemente le dictionnaire espagnol
 public class Espagnol implements Dictionnaire {
 
 	 private HashMap<Couleur, String> couleurs;
@@ -83,7 +83,7 @@ public class Espagnol implements Dictionnaire {
 	        menu.put(Menu.MENU_NOUVEAU, "Parte nueva ");
 	        menu.put(Menu.MENU_OUVRIR, "Abrir ");
 	        menu.put(Menu.MENU_QUITTER, "Salir ");
-	        menu.put(Menu.MENU_MENU, "Menù : ");
+	        menu.put(Menu.MENU_MENU, "Menu : ");
 	    }
 
 	    

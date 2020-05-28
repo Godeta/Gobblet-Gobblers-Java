@@ -1,6 +1,6 @@
 package gobblets.ihm;
 
-//Énumération qui contient les différents avertissements qui peuvent être affichés pendant une partie
+//enumeration qui contient les differents avertissements qui peuvent être affiches pendant une partie
 public enum Avertissement {
     TONTOUR,
     CHOIXACTION,

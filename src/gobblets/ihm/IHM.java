@@ -3,7 +3,7 @@ package gobblets.ihm;
 import gobblets.ihm.langues.*;
 import gobblets.data.*;
 
-//Classe qui modélise l'interface homme-machine
+//Classe qui modelise l'interface homme-machine
 public abstract class IHM {
     private Dictionnaire language;
 

@@ -1,7 +1,7 @@
 package gobblets.data;
 
 
-//définie une pièce et prend sa taille en paramètre dans le constructeur
+//definie une pièce et prend sa taille en paramètre dans le constructeur
 public class Piece {
 	//chaque pièce à une taille et une couleur
 	    private Couleur couleur;
@@ -34,7 +34,7 @@ public class Piece {
 	        return p;
 	    }
 
-	    //vérifie si deux pièces sont équivalentes
+	    //verifie si deux pièces sont equivalentes
 	    public boolean equals(Object obj) {
 	        if (this == obj)
 	            return true;

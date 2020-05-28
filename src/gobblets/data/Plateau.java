@@ -3,7 +3,7 @@ package gobblets.data;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-//modélise le plateau du jeu
+//modelise le plateau du jeu
 public class Plateau {
 	//9 cases, 3 lignes et 3 colonnes
     private Case[][] cases = new Case[3][3];

@@ -6,7 +6,7 @@ import gobblets.interaction.Action;
 import gobblets.interaction.Deplacement;
 import gobblets.interaction.Placement;
 
-//Implémentation de la méthode de la classe Joueur, utilise une logique interne afin de sélectionner une action
+//Implementation de la methode de la classe Joueur, utilise une logique interne afin de selectionner une action
 public class JoueurIA extends Joueur {
     private Joueur adversaire;
 
@@ -22,7 +22,7 @@ public class JoueurIA extends Joueur {
         this.adversaire = adversaire;
     }
 
-    //Implémentation de la méthode de la classe Joueur, utilise une logique interne afin de sélectionner une action
+    //Implementation de la methode de la classe Joueur, utilise une logique interne afin de selectionner une action
     public Action choisirAction(Plateau p) {
     	Action a = null;
     	int abs = 1;
@@ -40,7 +40,7 @@ public class JoueurIA extends Joueur {
         return a;
     }
     
-    //avoir un entier aléatoire entre deux valeurs
+    //avoir un entier aleatoire entre deux valeurs
     public static int getRandomIntegerBetweenRange(double min, double max){
         double x = (int)(Math.random()*((max-min)+1))+min;
         return (int) x;

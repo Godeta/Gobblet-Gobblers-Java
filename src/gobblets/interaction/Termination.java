@@ -1,7 +1,7 @@
 package gobblets.interaction;
 import gobblets.data.Joueur;
 
-//zimmermanna Cette classe modélise l'action de quitter le jeu
+//zimmermanna Cette classe modelise l'action de quitter le jeu
 public class Termination extends Action {
     public Termination() {}
 

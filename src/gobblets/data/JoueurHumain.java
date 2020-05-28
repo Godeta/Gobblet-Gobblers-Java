@@ -10,7 +10,7 @@ import gobblets.interaction.Placement;
 import gobblets.interaction.Termination;
 import gobblets.logic.PiecePasdisponibleException;
 
-//Classe définissant un joueur que l'on peut contrôler
+//Classe definissant un joueur que l'on peut contrôler
 public class JoueurHumain extends Joueur {
 	private IHM i;
     public JoueurHumain(String nom, Couleur couleur) {
@@ -22,7 +22,7 @@ public class JoueurHumain extends Joueur {
         this.i = i;
     }
 
-    //Implémentation de la méthode abstraite de la classe Joueur, utilise les méthodes de une instance de la classe IHM
+    //Implementation de la methode abstraite de la classe Joueur, utilise les methodes de une instance de la classe IHM
     public Action choisirAction(Plateau p) throws Exception {
         ActionType choix = i.saisirAction(this);
         switch (choix) {

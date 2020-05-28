@@ -1,5 +1,5 @@
 package gobblets.data;
-//les différents types d'actions possibles à chaque tours
+//les differents types d'actions possibles à chaque tours
 public enum ActionType {
     PLACER,
     DEPLACER,

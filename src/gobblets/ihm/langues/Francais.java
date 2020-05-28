@@ -11,7 +11,7 @@ import gobblets.data.Etat;
 import gobblets.data.Taille;
 import gobblets.ihm.Dictionnaire;
 
-//Classe qui implémente le dictionnaire français
+//Classe qui implemente le dictionnaire français
 public class Francais implements Dictionnaire {
 	 private HashMap<Couleur, String> couleurs;
 	    private HashMap<Taille, String> tailles;
@@ -38,8 +38,8 @@ public class Francais implements Dictionnaire {
 	        etats = new HashMap<Etat, String>();
 	        etats.put(Etat.JEUENCOURS, "Jeu en cours");
 	        etats.put(Etat.JEUQUITTE, "Jeu quitter");
-	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 à gagné !");
-	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 à gagné !");
+	        etats.put(Etat.JOUEUR1GAGNE, "Joueur 1 à gagne !");
+	        etats.put(Etat.JOUEUR2GAGNE, "Joueur 2 à gagne !");
 	        etats.put(Etat.MATCHNUL, "Match nul");
 	        /* actions */
 	        actions = new HashMap<ActionType, String>();
@@ -49,7 +49,7 @@ public class Francais implements Dictionnaire {
 	        /* erreurs */
 	        erreurs = new HashMap<Erreur, String>();
 	        erreurs.put(Erreur.ARGUMENTINCORECT, "Argument incorrect");
-	        erreurs.put(Erreur.CASEBLOQUE, "Case Bloquée");
+	        erreurs.put(Erreur.CASEBLOQUE, "Case Bloquee");
 	        erreurs.put(Erreur.DIAGONALEINCORECTE, "Diagonale incorrecte");
 	        erreurs.put(Erreur.ORIGINVIDE, "Origine vide");
 	        erreurs.put(Erreur.PASDEPIECEDISPONIBLE, "Pas de pièce disponible");
@@ -63,7 +63,7 @@ public class Francais implements Dictionnaire {
 	        avertissements.put(Avertissement.COULEURJOUEUR, "Couleur joueur");
 	        avertissements.put(Avertissement.NOMJOUEUR, "Nom joueur");
 	        avertissements.put(Avertissement.TONTOUR, "Tour de");
-	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Saisie coordonnées");
+	        avertissements.put(Avertissement.SAISIECOORDONNEES, "Saisie coordonnees");
 	        avertissements.put(Avertissement.SAISIELIGNE, "Entrez la ligne");
 	        avertissements.put(Avertissement.SAISIECOLONNE, "Entrez la colonne");
 	        avertissements.put(Avertissement.MAISON, "Maison");

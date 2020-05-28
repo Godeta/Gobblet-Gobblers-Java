@@ -5,7 +5,7 @@ import static org.fusesource.jansi.Ansi.ansi;
 import static org.fusesource.jansi.Ansi.Color.BLUE;
 import static org.fusesource.jansi.Ansi.Color.WHITE;
 
-//Constructeur qui exploite des méthodes de saisie afin d'initialiser le jeu
+//Constructeur qui exploite des methodes de saisie afin d'initialiser le jeu
 
 import java.util.Random;
 import java.util.Scanner;
@@ -39,10 +39,10 @@ public class Jeu {
         /* temp */
         saisie = new SaisieConsole();
         etat = Etat.JEUENCOURS;
-  	  	//on effectue le choix de la langue une seule fois au début du jeu
+  	  	//on effectue le choix de la langue une seule fois au debut du jeu
         choixLangue(saisie);    
         do {
-        System.out.println(ansi().eraseScreen().fg(BLUE).a(saisie.getLanguage().menu(Menu.MENU_MENU)).fg(WHITE));
+        System.out.println(ansi().fg(BLUE).a(saisie.getLanguage().menu(Menu.MENU_MENU)).fg(WHITE));
         } while (menu_display(saisie)==0);
     }
 
@@ -210,7 +210,7 @@ public class Jeu {
   	}
   	
   	/**
-  	 * Pour la saisie des joueurs au début de la partie
+  	 * Pour la saisie des joueurs au debut de la partie
   	 * @param saisie
   	 */
   	public void debut(IHM saisie) {
@@ -260,7 +260,7 @@ public class Jeu {
   	
   	public void Apropos(IHM saisie) {
   		System.out.println("\n\n");
-  		System.out.println("Ce projet a été fait en Mai 2020 dans le cadre de nos études à l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
+  		System.out.println("Ce projet a ete fait en Mai 2020 dans le cadre de nos etudes à l'IUT GRAND OUEST NORMANDIE par Arnaud GODET et Paul GOUBARD-LANGERS.");
   		System.out.println("\n\n");
   	}
   	
