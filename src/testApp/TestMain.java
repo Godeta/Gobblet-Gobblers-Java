@@ -8,10 +8,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import testApp.model.Personne;
 import testApp.model.Sexe;
@@ -96,6 +95,41 @@ public class TestMain extends Application{
 			e.printStackTrace();
 		}
 	}
+	
+	//Méthode qui va va afficher la popup d'édition
+	//ou de création d'une personne et initialiser son contrôleur
+	public void affichePersonneDialogue(Personne personne, String titre) {
+	    try {
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(TestMain.class.getResource("PersonneDialogue.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+	        
+	        // Création d'un nouveau Stage qui sera dépendant du Stage principal
+	        Stage stageDialogue = new Stage();
+	        stageDialogue.setTitle(titre);
+	        stageDialogue.initModality(Modality.WINDOW_MODAL);
+	        
+	        //Avec cette instruction, notre fenêtre modifiée sera modale
+	        //par rapport à notre stage principal
+	        stageDialogue.initOwner(stagePrincipal);
+	        Scene scene = new Scene(page);
+	        stageDialogue.setScene(scene);
+	        
+	        // initialisation du contrôleur
+	        PersonneDialogueMapping controller = loader.getController();
+	        //On passe la personne avec laquelle nous souhaitons travailler
+	        //une existante ou une nouvelle
+	        controller.setPersonne(personne);
+	        controller.setMainClass(this);
+	        
+	        // Show the dialog and wait until the user closes it
+	        stageDialogue.showAndWait();
+	        //return controller.isOkClicked();
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
+	}
+
 
 	
 	public static void main(String[] args) {

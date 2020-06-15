@@ -3,6 +3,7 @@ package testApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import testApp.model.Personne;
 
 public class PersonneMenuMapping {
     //Objet servant de référence à notre classe principale
@@ -33,7 +34,8 @@ public class PersonneMenuMapping {
 	
 	@FXML
 	public void nouveau() {
-		
+		//On affiche la popup avec une personne inexistante
+	    this.main.affichePersonneDialogue(new Personne(), "Création d'une personne");
 	}
 	
 	
