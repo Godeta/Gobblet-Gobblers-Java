@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.view.gameMap">
    <center>
@@ -21,8 +23,55 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ChoiceBox prefHeight="161.0" prefWidth="180.0" />
-            <ChoiceBox layoutX="10.0" layoutY="10.0" prefHeight="161.0" prefWidth="180.0" GridPane.columnIndex="1" />
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="caseGG0" mnemonicParsing="false" onAction="#caseGG0" prefHeight="161.0" prefWidth="196.0">
+                     <font>
+                        <Font size="69.0" />
+                     </font>
+                  </Button>
+              </buttons>
+            </ButtonBar>
+            <Button fx:id="caseGG2" mnemonicParsing="false" onAction="#caseGG2" prefHeight="161.0" prefWidth="196.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button fx:id="caseGG3" layoutX="177.0" layoutY="10.0" mnemonicParsing="false" onAction="#caseGG3" prefHeight="161.0" prefWidth="196.0" GridPane.columnIndex="2">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button fx:id="caseGG4" layoutX="344.0" layoutY="10.0" mnemonicParsing="false" onAction="#caseGG4" prefHeight="161.0" prefWidth="196.0" GridPane.rowIndex="1">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button fx:id="caseGG5" mnemonicParsing="false" onAction="#caseGG5" prefHeight="161.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button fx:id="caseGG6" layoutX="177.0" layoutY="171.0" mnemonicParsing="false" onAction="#caseGG6" prefHeight="161.0" prefWidth="196.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button fx:id="caseGG7" layoutX="344.0" layoutY="171.0" mnemonicParsing="false" onAction="#caseGG7" prefHeight="161.0" prefWidth="196.0" GridPane.rowIndex="2">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button fx:id="caseGG8" layoutX="10.0" layoutY="332.0" mnemonicParsing="false" onAction="#caseGG8" prefHeight="161.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
+            <Button id="caseGG9" fx:id="caseGG9" layoutX="177.0" layoutY="332.0" mnemonicParsing="false" onAction="#caseGG9" prefHeight="161.0" prefWidth="196.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Button>
          </children>
       </GridPane>
    </center>

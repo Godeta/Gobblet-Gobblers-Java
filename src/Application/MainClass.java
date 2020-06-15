@@ -1,22 +1,33 @@
 package Application;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import Application.view.MenuMap;
 import Application.view.gameMap;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import testApp.PersonneDialogueMapping;
+import testApp.TestMain;
+import testApp.model.Personne;
+import Application.view.*;
 
 public class MainClass extends Application{
 
 
-	//Nous créons des variable de classes afin de pouvoir y accéder partout
-	//Ceci afin de pouvoir y positionner les éléments que nous avons fait
-	//Il y a un BorderPane car le conteneur principal de notre IHM
-	//est un BorderPane, nous reparlerons de l'objet Stage
 	private Stage stagePrincipal;
 	private BorderPane conteneurPrincipal;
 	
@@ -28,8 +39,9 @@ public class MainClass extends Application{
 		//Nous allons utiliser nos fichier FXML dans ces deux méthodes
 		initialisationConteneurPrincipal();
 		initialisationContenu();
+		
 	}
-
+	
 	  private void initialisationConteneurPrincipal() {
 	    	//On créé un chargeur de FXML
 	    	FXMLLoader loader = new FXMLLoader();
@@ -76,10 +88,36 @@ public class MainClass extends Application{
 			//pour qu'il puisse récupérer notre liste observable
 			controleur.setMainApp(this);
 			
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	//Méthode qui va va afficher la popup d'édition
+		//ou de création d'une personne et initialiser son contrôleur
+		public int affichePieceDialogue() {
+		    	Alert dialogue = new Alert(AlertType.CONFIRMATION);
+		        dialogue.setTitle("Choix de la taille de la pièce");
+		        dialogue.setHeaderText(null);
+		        dialogue.setContentText("Vous avez 3 possibilitées, qu'elle taille souhaitez vous utiliser ?");
+		        ButtonType button1 = new ButtonType("Petite");
+		        ButtonType button2 = new ButtonType("Moyenne");
+		        ButtonType button3 = new ButtonType("Grande");
+		        ButtonType button4 = new ButtonType("Annuler", ButtonData.CANCEL_CLOSE);
+		        dialogue.getButtonTypes().setAll(button1, button2, button3, button4);
+		        Optional<ButtonType> result = dialogue.showAndWait();
+		        if (result.get() == button1){
+		        	return 1;
+		        } else if (result.get() == button2) {
+		        return 2;
+		        } else if (result.get() == button3) {
+		        	return 3;
+		        } else {
+		        	return 0;
+		        }
+		    
+		}
 
 	
 	public static void main(String[] args) {
